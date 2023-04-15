@@ -8,5 +8,6 @@ namespace Obligatorio1
 {
     public class Huesped
     {
+        public static int UltimoId { get; set; }
     }
 }
