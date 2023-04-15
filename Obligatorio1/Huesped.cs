@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Obligatorio1
 {
-    public class Huesped
+    public class Huesped: Usuario
     {
         public string TipoDocumento { get; set; }
 
@@ -29,7 +29,7 @@ namespace Obligatorio1
             
         }
 
-        public Huesped(string tipoDocumento, int numeroDocumento, string nombre, string apellido, int habitacion, DateTime fechaNacimiento, int nivelFidelizacion)
+        public Huesped(string tipoDocumento, int numeroDocumento, string nombre, string apellido, int habitacion, DateTime fechaNacimiento, int nivelFidelizacion ,string email, string contrasenia):base(email, contrasenia)
         {
             TipoDocumento = tipoDocumento;
             NumeroDocumento = numeroDocumento;
@@ -38,6 +38,11 @@ namespace Obligatorio1
             Habitacion = habitacion;
             FechaNacimiento = fechaNacimiento;
             NivelFidelizacion = nivelFidelizacion;
+        }
+
+        public override void EsValido()
+        {
+            throw new NotImplementedException();
         }
     }
 }

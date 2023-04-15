@@ -16,7 +16,7 @@ namespace Obligatorio1
         public string Direccion { get; set; }
         public int Descuento { get; set; }
 
-        public void EsVAlido()
+        public void EsValido()
         { 
         }
 
