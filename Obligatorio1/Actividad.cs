@@ -17,14 +17,14 @@ namespace Obligatorio1
         public int EdadMinima { get; set; }
         public double CostoDolares { get; set; }
         public int LugaresDisponibles { get; set; }
-
         public Actividad()
         {
 
         }
-
         public Actividad(string nombre, string descripcion, DateTime fecha, int cantMaxPersonas, int edadMinima, double costoDolares, int lugaresDisponibles)
         {
+            Id = UltimoId;
+            UltimoId++;
             Nombre = nombre;
             Descripcion = descripcion;
             Fecha = fecha;
