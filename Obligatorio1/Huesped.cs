@@ -16,7 +16,7 @@ namespace Obligatorio1
 
         public string Apellido { get; set; }
 
-        public int Habitacion { get; set; }
+        public string Habitacion { get; set; }
 
         public DateTime FechaNacimiento { get; set; }
 

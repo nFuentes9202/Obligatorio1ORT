@@ -12,7 +12,7 @@ namespace Obligatorio1
         public string Lugar { get; set;}
         public bool EsAlAireLibre { get; set; }
         public ActividadHostal() { }
-        public ActividadHostal(int id, string nombre, string descripcion, DateTime fecha, int cantMaxPersonas, int edadMinima, double costoDolares, int lugaresDisponibles, string nomPersonaResponable, string lugar, bool esAlAireLibre) : base( nombre, descripcion, fecha, cantMaxPersonas, edadMinima, costoDolares, lugaresDisponibles)
+        public ActividadHostal(string nombre, string descripcion, DateTime fecha, int cantMaxPersonas, int edadMinima, double costoDolares, int lugaresDisponibles, string nomPersonaResponable, string lugar, bool esAlAireLibre) : base( nombre, descripcion, fecha, cantMaxPersonas, edadMinima, costoDolares, lugaresDisponibles)
         {
             NomPersonaResponsable = nomPersonaResponable;
             Lugar = lugar;

@@ -58,7 +58,8 @@ namespace Obligatorio1
         {
             try
             {
-                //TODO
+                prov.EsValido();
+                _proveedores.Add(prov);
             }
             catch (Exception)
             {
