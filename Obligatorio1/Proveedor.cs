@@ -11,7 +11,7 @@ namespace Obligatorio1
     {
         public static int UltimoId { get; set; }
         public int Id { get; set; }
-        public static string NombreUnico { get; set; }
+        public string NombreUnico { get; set; }
         public string Telefono { get; set; }
         public string Direccion { get; set; }
         public int Descuento { get; set; }
@@ -26,6 +26,18 @@ namespace Obligatorio1
 
         public void EsValido()
         {
+            if (string.IsNullOrEmpty(NombreUnico))
+            {
+                throw new Exception("Nombre no puede ser vacio o nulo");
+            }
+            if (string.IsNullOrEmpty(Telefono))
+            {
+                throw new Exception("Telefono no puede ser vacio o nulo");
+            }
+            if (string.IsNullOrEmpty(Direccion))
+            {
+                throw new Exception("La direccion de correo no puede ser vacio o nulo");
+            }
         }
 
         public Proveedor()
@@ -34,9 +46,8 @@ namespace Obligatorio1
             UltimoId++;
         }
 
-        public Proveedor(int id, string telefono, string direccion, int descuento)
+        public Proveedor(string telefono, string direccion, int descuento)
         {
-            Id = id;
             Telefono = telefono;
             Direccion = direccion;
             Descuento = descuento;
