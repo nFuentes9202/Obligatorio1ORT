@@ -12,7 +12,6 @@ namespace Obligatorio1
         public DateTime FechaConfirmacion { get; set; } 
         public Proveedor Proveedor { get; set; }
         public ActividadTercerizada() { }
-        //TODO - Falta agregar proveedor a la actividad tercerizada
         public ActividadTercerizada(string nombre, string descripcion, DateTime fecha, int cantMaxPersonas, int edadMinima, double costoDolares, int lugaresDisponibles, bool estaConfirmada, DateTime fechaConfirmacion, Proveedor proveedor) : base(nombre, descripcion, fecha, cantMaxPersonas, edadMinima, costoDolares, lugaresDisponibles)
         {
             EstaConfirmada = estaConfirmada;
