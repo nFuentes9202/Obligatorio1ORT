@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Obligatorio1
 {
-    public abstract class Actividad
+    public abstract class Actividad:IValidacion
     {
         public static int UltimoId { get; set; }
         public int Id { get; set; }

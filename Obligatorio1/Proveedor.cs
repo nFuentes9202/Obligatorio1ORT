@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Obligatorio1
 {
-    public class Proveedor
+    public class Proveedor:IValidacion
     {
         public static int UltimoId { get; set; }
         public int Id { get; set; }
@@ -16,13 +16,16 @@ namespace Obligatorio1
         public string Direccion { get; set; }
         public int Descuento { get; set; }
 
-        public void EsValido()
-        { 
-        }
+        
 
         public bool FijarDescuentoActividad(int Descuento)
         {
+            //TODO
             return false;
+        }
+
+        public void EsValido()
+        {
         }
 
         public Proveedor()
