@@ -10,7 +10,7 @@ namespace Obligatorio1
     {
         public string TipoDocumento { get; set; }
 
-        public int NumeroDocumento { get; set; }
+        public string NumeroDocumento { get; set; }
 
         public string Nombre {get; set; }
 
@@ -29,7 +29,7 @@ namespace Obligatorio1
             
         }
 
-        public Huesped(string tipoDocumento, int numeroDocumento, string nombre, string apellido, int habitacion, DateTime fechaNacimiento, int nivelFidelizacion ,string email, string contrasenia):base(email, contrasenia)
+        public Huesped(string tipoDocumento, string numeroDocumento, string nombre, string apellido, string habitacion, DateTime fechaNacimiento, int nivelFidelizacion ,string email, string contrasenia):base(email, contrasenia)
         {
             TipoDocumento = tipoDocumento;
             NumeroDocumento = numeroDocumento;
@@ -42,7 +42,44 @@ namespace Obligatorio1
 
         public override void EsValido()
         {
-            throw new NotImplementedException();
+            if (String.IsNullOrEmpty(Habitacion))
+            {
+                if(TipoDocumento == "CI")
+                {
+                    if (!EsCedulaValida(NumeroDocumento))
+                    {
+                        throw new Exception("Cedula no válida");
+                    }
+                }
+            }
+
+        }
+        private static bool EsCedulaValida(string cedula)
+        {
+            if(cedula.Length != 8)
+            {
+                return false;
+            }
+            List<int> Multiplicadores = new List<int> { 2, 9, 8, 7, 6, 3, 4 };
+            int suma = 0;
+            for (int i = 0; i < 7; i++)
+            {
+                int digito = int.Parse(cedula[i].ToString());
+                int producto = digito * Multiplicadores[i];
+                suma += producto;
+            }
+            int resto = suma % 10;
+            int verificador;
+            if(resto == 0)
+            {
+                verificador = 0;
+            }
+            else
+            {
+                verificador = 10 - resto;
+            }
+            int digitoVerificador = int.Parse(cedula[7].ToString());
+            return verificador == digitoVerificador;
         }
     }
 }
