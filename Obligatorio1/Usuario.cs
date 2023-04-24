@@ -26,6 +26,20 @@ namespace Obligatorio1
             Contrasenia = contrasenia;
         }
 
-        public abstract void EsValido();
+        public virtual void EsValido()
+        {
+            if (!Email.Contains("@"))
+            {
+                throw new Exception("El email debe tener el simbolo '@'");
+            }
+            if(Email.IndexOf("@") == 0 || Email.IndexOf("@") == Email.Length - 1)
+            {
+                throw new Exception("El simbolo '@' no puede estar al final o al inicio del email");
+            }
+            if(Contrasenia.Length < 8)
+            {
+                throw new Exception("La contraseña debe ser mayor o igual a 8 caracteres");
+            }
+        }
     }
 }
