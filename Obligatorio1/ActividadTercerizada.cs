@@ -20,7 +20,7 @@ namespace Obligatorio1
         }
         public override void EsValido()
         {
-            throw new NotImplementedException();
+            base.EsValido();
         }
     }
 }

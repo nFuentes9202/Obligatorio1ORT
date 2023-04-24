@@ -22,7 +22,10 @@ namespace Obligatorio1
 
         public override void EsValido()
         {
-            throw new NotImplementedException();
+            if(String.IsNullOrEmpty(NomPersonaResponsable)) {
+                throw new Exception("El nombre de la persona responsable no puede ser vacio o nulo");
+            }
+            base.EsValido();
         }
     }
 }
