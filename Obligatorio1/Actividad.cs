@@ -33,6 +33,24 @@ namespace Obligatorio1
             CostoDolares = costoDolares;
             LugaresDisponibles = lugaresDisponibles;
         }
-        public abstract void EsValido();
+        public virtual void EsValido()
+        {
+            if (String.IsNullOrEmpty(Nombre))
+            {
+                throw new Exception("Nombre no puede ser vacio o nulo");
+            }
+            if(String.IsNullOrEmpty(Descripcion))
+            {
+                throw new Exception("Descripcion no puede ser vacia o nula");
+            }
+            if(Fecha < DateTime.Now)
+            {
+                throw new Exception("La fecha debe ser mayor o igual a la actual");
+            }
+            if(Nombre.Length > 25)
+            {
+                throw new Exception("El nombre no puede contener más de 25 caracteres");
+            }
+        }
     }
 }

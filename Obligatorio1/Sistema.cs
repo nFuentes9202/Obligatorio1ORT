@@ -16,7 +16,7 @@ namespace Obligatorio1
         ActividadHostal ac1 = new ActividadHostal("Campeonato de Pool", "Juego de mesa indoor", FechasRandom(), 20, 18, 15, 20, "Roberto", "Salon de Juegos", false);
         ActividadHostal ac2 = new ActividadHostal("Campeonato de Ping Pong", "Juego de mesa indoor", FechasRandom(), 26, 15, 10, 26, "Roberto", "Salon de Juegos", false);
         ActividadHostal ac3 = new ActividadHostal("Campeonato de Tenis", "Partidos de Tenis singles", FechasRandom(), 12, 18, 25, 12, "Andres", "Canchas de Tenis", true);
-        ActividadHostal ac4 = new ActividadHostal("Campeonato de Futbol5", "Partidos de futbol 5 por equipo", FechasRandom() 30, 18, 75, 30, "Andres", "Canchas de Futbol", true);
+        ActividadHostal ac4 = new ActividadHostal("Campeonato de Futbol5", "Partidos de futbol 5 por equipo", FechasRandom(), 30, 18, 75, 30, "Andres", "Canchas de Futbol", true);
         ActividadHostal ac5 = new ActividadHostal("Campeonato de Ajedrez", "Juego de mesa indoor", FechasRandom(), 8, 5, 0, 8, "Roberto", "Salon de Juegos", false);
         ActividadHostal ac6 = new ActividadHostal("Campeonato de Pesca", "Activdad Acuatica", FechasRandom(), 50, 10, 30, 50, "Sebastian", "Lago", true);
         ActividadHostal ac7 = new ActividadHostal("Torneo de Golf", "Competencia mixta a 9 hoyos", FechasRandom(), 35, 21, 100, 35, "Andres", "Campo de Golf", true);
