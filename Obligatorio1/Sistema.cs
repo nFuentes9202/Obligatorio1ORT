@@ -78,31 +78,31 @@ namespace Obligatorio1
             Actividad ac23 = new ActividadTercerizada("“ensayo y error. el complejo de dios” - tim harford", "Charlas Motivadoras", new DateTime(2023, 08, 21), 35, 18, 0, 35, false, new DateTime(2023, 16, 05), "Norberto Molina");
             Actividad ac24 = new ActividadTercerizada("“de dónde proceden las buenas ideas” - steven johnson", "Charlas Motivadoras", new DateTime(2023, 07, 20), 35, 18, 0, 35, false, new DateTime(2023, 05, 25), "Norberto Molina");
             Actividad ac25 = new ActividadTercerizada("“¿cómo enseñar? a través de los errores” - diana laufenberg", "Charlas Motivadoras", new DateTime(2023, 10, 27), 35, 18, 0, 35, false, new DateTime(2023, 08, 12), "Norberto Molina");
-            AltaActividad(ac1)
-                AltaActividad(ac2)
-                AltaActividad(ac3)
-                AltaActividad(ac4)
-                AltaActividad(ac5)
-                AltaActividad(ac6)
-                AltaActividad(ac7)
-                AltaActividad(ac8)
-                AltaActividad(ac9)
-                AltaActividad(ac10)
-                AltaActividad(ac11)
-                AltaActividad(ac12)
-                AltaActividad(ac13)
-                AltaActividad(ac14)
-                AltaActividad(ac15)
-                AltaActividad(ac16)
-                AltaActividad(ac17)
-                AltaActividad(ac18)
-                AltaActividad(ac19)
-                AltaActividad(ac20)
-                AltaActividad(ac21)
-                AltaActividad(ac22)
-                AltaActividad(ac23)
-                AltaActividad(ac24)
-                AltaActividad(ac25)
+            AltaActividad(ac1);
+                AltaActividad(ac2);
+                AltaActividad(ac3);
+                AltaActividad(ac4);
+                AltaActividad(ac5);
+                AltaActividad(ac6);
+                AltaActividad(ac7);
+                AltaActividad(ac8);
+                AltaActividad(ac9);
+                AltaActividad(ac10);
+                AltaActividad(ac11);
+                AltaActividad(ac12);
+                AltaActividad(ac13);
+                AltaActividad(ac14);
+                AltaActividad(ac15);
+                AltaActividad(ac16);
+                AltaActividad(ac17);
+                AltaActividad(ac18);
+                AltaActividad(ac19);
+                AltaActividad(ac20);
+                AltaActividad(ac21);
+                AltaActividad(ac22);
+                AltaActividad(ac23);
+                AltaActividad(ac24);
+                AltaActividad(ac25);
             }
         #endregion
 

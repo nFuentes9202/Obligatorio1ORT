@@ -46,8 +46,9 @@ namespace Obligatorio1
             UltimoId++;
         }
 
-        public Proveedor(string telefono, string direccion, int descuento)
+        public Proveedor(string nombreUnico,string telefono, string direccion, int descuento)
         {
+            NombreUnico = nombreUnico;
             Telefono = telefono;
             Direccion = direccion;
             Descuento = descuento;
