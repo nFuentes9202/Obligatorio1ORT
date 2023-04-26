@@ -22,8 +22,19 @@ namespace MenuConsola
                 {
 
                     case 1:
-                        //Console.WriteLine(Sistema.GetActividades());
-                        //TODO
+                        List<Actividad> todas = s.GetActividades();
+                        if(todas.Count > 0) { 
+                        foreach(Actividad actividad in todas)
+                            {
+                                Console.WriteLine(actividad.Id);
+                            }
+                        }
+                        else
+                        {
+                            Console.WriteLine("No hay Actividades");
+                        }
+                      
+                        
                         break;
 
                     case 2:
@@ -86,14 +97,17 @@ namespace MenuConsola
 
                         //TODO
                         break;
-
-
                 }
+
+
+                Console.ReadKey();
             }
+
         }
 
         private static void armaMenu() {
-
+            Console.Clear();
+            Console.WriteLine($"  ___    _       _   _                   _                    _             ____    ____      __  __   ____       _    \r\n  / _ \\  | |__   | | (_)   __ _    __ _  | |_    ___    _ __  (_)   ___     |  _ \\  |___ \\    |  \\/  | |___ \\     / \\   \r\n | | | | | '_ \\  | | | |  / _` |  / _` | | __|  / _ \\  | '__| | |  / _ \\    | |_) |   __) |   | |\\/| |   __) |   / _ \\  \r\n | |_| | | |_) | | | | | | (_| | | (_| | | |_  | (_) | | |    | | | (_) |   |  __/   / __/    | |  | |  / __/   / ___ \\ \r\n  \\___/  |_.__/  |_| |_|  \\__, |  \\__,_|  \\__|  \\___/  |_|    |_|  \\___/    |_|     |_____|   |_|  |_| |_____| /_/   \\_\\\r\n                          |___/                                                                                         ");
             Console.WriteLine("1 - Listado de todas las Actividades.");
             Console.WriteLine("2 - Listado de proveedores.");
             Console.WriteLine("3 - Acvtividades entre fechas que cuesten mas de");

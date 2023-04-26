@@ -40,7 +40,7 @@ namespace Obligatorio1
             Proveedor pro6 = new Proveedor("Electric Blue", "26018945", "Cooper 678", 5);
             Proveedor pro7 = new Proveedor("Lúdica S.A.", "26142967", "Dublin 560", 4);
             Proveedor pro8 = new Proveedor("Gimenez S.R.L.", "29001010", "Andes 1190", 7);
-            Proveedor pro9 = new Proveedor("", "22041120", "Agraciada 2512 Apto. 1", 8);
+            Proveedor pro9 = new Proveedor("yogui", "22041120", "Agraciada 2512 Apto. 1", 8);
             Proveedor pro10 = new Proveedor("Norberto Molina", "22001189", "Paraguay 2100", 9);
             AltaProveedor(pro1);
             AltaProveedor(pro2);
@@ -76,7 +76,7 @@ namespace Obligatorio1
             Actividad ac20 = new ActividadTercerizada("Pica-Pica", "Show musical infantil", new DateTime(2023, 06, 11), 50, 1, 10, 50, false, new DateTime(2023, 04, 09), pro6);
             Actividad ac21 = new ActividadTercerizada("Mago Daniel K", "Show de magia para ninios", new DateTime(2023, 07, 17), 50, 1, 10, 50, false, new DateTime(2023, 05, 26), pro6);
             Actividad ac22 = new ActividadTercerizada("Los Rokilis", "Show musical infantil", new DateTime(2023, 09, 13), 50, 1, 10, 50, true, new DateTime(2023, 06, 15), pro6);
-            Actividad ac23 = new ActividadTercerizada("“ensayo y error. el complejo de dios” - tim harford", "Charlas Motivadoras", new DateTime(2023, 08, 21), 35, 18, 0, 35, false, new DateTime(2023, 16, 05), pro10);
+            Actividad ac23 = new ActividadTercerizada("“ensayo y error. el complejo de dios” - tim harford", "Charlas Motivadoras", new DateTime(2023, 08, 21), 35, 18, 0, 35, false, new DateTime(2023, 09, 05), pro10);
             Actividad ac24 = new ActividadTercerizada("“de dónde proceden las buenas ideas” - steven johnson", "Charlas Motivadoras", new DateTime(2023, 07, 20), 35, 18, 0, 35, false, new DateTime(2023, 05, 25), pro10);
             Actividad ac25 = new ActividadTercerizada("“¿cómo enseñar? a través de los errores” - diana laufenberg", "Charlas Motivadoras", new DateTime(2023, 10, 27), 35, 18, 0, 35, false, new DateTime(2023, 08, 12), pro10);
             AltaActividad(ac1);
