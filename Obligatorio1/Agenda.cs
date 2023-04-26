@@ -23,13 +23,13 @@ namespace Obligatorio1
         }
     }
 
-    public double CalcularCosto()
-    {
+   // public double CalcularCosto()
+   // {
         //preguntarle a actividad si la misma es del hostal o tercerizada
         //if(Actividad a is ActividadHostal){
             //preguntar el tipo de fidelidad del huesped y retornar el costo base con el % adecuado
         //}
-    }
+    //}
 
     //public void FijarEstado(bool estado)
     //{
