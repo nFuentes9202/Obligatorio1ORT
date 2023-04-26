@@ -13,6 +13,7 @@ namespace Obligatorio1
         private static Sistema _instance = null;
         private Sistema()
         {
+            Precarga();
         }
         public static Sistema GetInstancia()
         {
