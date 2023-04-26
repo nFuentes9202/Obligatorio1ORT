@@ -79,7 +79,7 @@ namespace Obligatorio1
             Actividad ac23 = new ActividadTercerizada("“ensayo y error. el complejo de dios” - tim harford", "Charlas Motivadoras", new DateTime(2023, 08, 21), 35, 18, 0, 35, false, new DateTime(2023, 09, 05), pro10);
             Actividad ac24 = new ActividadTercerizada("“de dónde proceden las buenas ideas” - steven johnson", "Charlas Motivadoras", new DateTime(2023, 07, 20), 35, 18, 0, 35, false, new DateTime(2023, 05, 25), pro10);
             Actividad ac25 = new ActividadTercerizada("“¿cómo enseñar? a través de los errores” - diana laufenberg", "Charlas Motivadoras", new DateTime(2023, 10, 27), 35, 18, 0, 35, false, new DateTime(2023, 08, 12), pro10);
-            AltaActividad(ac1);
+                AltaActividad(ac1);
                 AltaActividad(ac2);
                 AltaActividad(ac3);
                 AltaActividad(ac4);
