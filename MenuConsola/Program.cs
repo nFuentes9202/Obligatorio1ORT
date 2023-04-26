@@ -6,8 +6,23 @@ namespace MenuConsola
     {
         static void Main(string[] args)
         {
-            
-            Console.WriteLine("Hello, World!");
+            Sistema s = Sistema.GetInstancia();
+
+
+            int op = -1;
+
+            while(op != 0) {
+
+                armaMenu();
+            }
+        }
+
+        private static void armaMenu() {
+
+            Console.WriteLine("1 - Listado de todas las Actividades.");
+        
+        
+        
         }
     }
-}
+}  

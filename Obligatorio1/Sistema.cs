@@ -154,7 +154,7 @@ namespace Obligatorio1
 
         #endregion
 
-
+        #region GetSet
         public List<Usuario> GetUsuarios()
         {
             return _usuarios;
@@ -167,8 +167,11 @@ namespace Obligatorio1
         {
             return _proveedores;
         }
+        #endregion
+
+        #region Requerimientos
 
 
-
+        #endregion
     }
 }

@@ -9,12 +9,12 @@ namespace Obligatorio1
     public class Agenda
     {
         public DateTime FechaCreacion { get; set; }
-        public string Estado { get; set; }
+        public bool Estado { get; set; }
         public Huesped Huesped { get; set; }
         public Actividad Actividad { get; set; }
         public Agenda() { }
 
-        public Agenda(string estado, Huesped huesped, Actividad actividad)
+        public Agenda(bool estado, Huesped huesped, Actividad actividad)
         {
             FechaCreacion = DateTime.Now;
             Estado = estado;
@@ -22,4 +22,20 @@ namespace Obligatorio1
             Actividad = actividad;
         }
     }
+
+    public double CalcularCosto()
+    {
+        //preguntarle a actividad si la misma es del hostal o tercerizada
+        //if(Actividad a is ActividadHostal){
+            //preguntar el tipo de fidelidad del huesped y retornar el costo base con el % adecuado
+        //}
+    }
+
+    //public void FijarEstado(bool estado)
+    //{
+    //    if (!estado)
+    //    {
+    //        estado = true;
+    //    }
+    //}
 }
