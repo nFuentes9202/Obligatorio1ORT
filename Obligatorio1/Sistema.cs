@@ -40,7 +40,7 @@ namespace Obligatorio1
             Proveedor pro6 = new Proveedor("Electric Blue", "26018945", "Cooper 678", 5);
             Proveedor pro7 = new Proveedor("Lúdica S.A.", "26142967", "Dublin 560", 4);
             Proveedor pro8 = new Proveedor("Gimenez S.R.L.", "29001010", "Andes 1190", 7);
-            Proveedor pro9 = new Proveedor("yogui", "22041120", "Agraciada 2512 Apto. 1", 8);
+            Proveedor pro9 = new Proveedor("toto", "22041120", "Agraciada 2512 Apto. 1", 8);
             Proveedor pro10 = new Proveedor("Norberto Molina", "22001189", "Paraguay 2100", 9);
             AltaProveedor(pro1);
             AltaProveedor(pro2);
@@ -54,7 +54,7 @@ namespace Obligatorio1
             AltaProveedor(pro10);
 
 
-            Actividad ac1 = new ActividadHostal("Campeonato de Pool", "Juego de mesa indoor", new DateTime(2023, 03, 12), 20, 18, 15, 20, "Roberto", "Salon de Juegos", false);
+            Actividad ac1 = new ActividadHostal("Campeonato de Pool", "Juego de mesa indoor", new DateTime(2023, 05, 12), 20, 18, 15, 20, "Roberto", "Salon de Juegos", false);
             Actividad ac2 = new ActividadHostal("Campeonato de Ping Pong", "Juego de mesa indoor", new DateTime(2023, 06, 05), 26, 15, 10, 26, "Roberto", "Salon de Juegos", false);
             Actividad ac3 = new ActividadHostal("Campeonato de Tenis", "Partidos de Tenis singles", new DateTime(2023, 09, 16), 12, 18, 25, 12, "Andres", "Canchas de Tenis", true);
             Actividad ac4 = new ActividadHostal("Campeonato de Futbol5", "Partidos de futbol 5 por equipo", new DateTime(2023, 10, 15), 30, 18, 75, 30, "Andres", "Canchas de Futbol", true);
@@ -64,8 +64,8 @@ namespace Obligatorio1
             Actividad ac8 = new ActividadHostal("Torneo de Poker", "Juego de mesa indoor", new DateTime(2023, 07, 16), 25, 18, 0, 25, "Roberto", "Salon de Juegos", false);
             Actividad ac9 = new ActividadHostal("Cabalgata", "Recorriendo el Lago y los Jardines", new DateTime(2023, 10, 20), 10, 15, 10, 10, "Sebastian", "Perimetro Exterior", true);
             Actividad ac10 = new ActividadHostal("Senderismo", "Descubriendo los Alrededores", new DateTime(2023, 11, 15), 24, 10, 0, 24, "Sebastian", "Cerro y Cascadas", true);
-            Actividad ac11 = new ActividadTercerizada("Avatar 2", "Cine al aire libre", new DateTime(2023, 04, 15), 50, 1, 10, 50, false, new DateTime(2023, 04, 04), pro1);
-            Actividad ac12 = new ActividadTercerizada("Super Mario Bros", "Cine al aire libre", new DateTime(2023, 04, 09), 50, 1, 10, 50, false, new DateTime(2023, 03, 26), pro1);
+            Actividad ac11 = new ActividadTercerizada("Avatar 2", "Cine al aire libre", new DateTime(2023, 07, 15), 50, 1, 10, 50, false, new DateTime(2023, 04, 04), pro1);
+            Actividad ac12 = new ActividadTercerizada("Super Mario Bros", "Cine al aire libre", new DateTime(2023, 06, 12), 50, 1, 10, 50, false, new DateTime(2023, 03, 26), pro1);
             Actividad ac13 = new ActividadTercerizada("Dick Tracy", "Cine al aire libre", new DateTime(2023, 06, 03), 50, 1, 10, 50, false, new DateTime(2023, 05, 28), pro1);
             Actividad ac14 = new ActividadTercerizada("Salto Bungee", "Salto desde el puente del Rio Negro", new DateTime(2023, 05, 29), 15, 21, 30, 5, true, new DateTime(2023, 04, 19), pro4);
             Actividad ac15 = new ActividadTercerizada("Salto Bungee", "Salto desde el puente del Rio Negro", new DateTime(2023, 06, 23), 15, 21, 30, 15, false, new DateTime(2023, 06, 12), pro4);
@@ -76,41 +76,46 @@ namespace Obligatorio1
             Actividad ac20 = new ActividadTercerizada("Pica-Pica", "Show musical infantil", new DateTime(2023, 06, 11), 50, 1, 10, 50, false, new DateTime(2023, 04, 09), pro6);
             Actividad ac21 = new ActividadTercerizada("Mago Daniel K", "Show de magia para ninios", new DateTime(2023, 07, 17), 50, 1, 10, 50, false, new DateTime(2023, 05, 26), pro6);
             Actividad ac22 = new ActividadTercerizada("Los Rokilis", "Show musical infantil", new DateTime(2023, 09, 13), 50, 1, 10, 50, true, new DateTime(2023, 06, 15), pro6);
-            Actividad ac23 = new ActividadTercerizada("“ensayo y error. el complejo de dios” - tim harford", "Charlas Motivadoras", new DateTime(2023, 08, 21), 35, 18, 0, 35, false, new DateTime(2023, 09, 05), pro10);
-            Actividad ac24 = new ActividadTercerizada("“de dónde proceden las buenas ideas” - steven johnson", "Charlas Motivadoras", new DateTime(2023, 07, 20), 35, 18, 0, 35, false, new DateTime(2023, 05, 25), pro10);
-            Actividad ac25 = new ActividadTercerizada("“¿cómo enseñar? a través de los errores” - diana laufenberg", "Charlas Motivadoras", new DateTime(2023, 10, 27), 35, 18, 0, 35, false, new DateTime(2023, 08, 12), pro10);
-                AltaActividad(ac1);
-                AltaActividad(ac2);
-                AltaActividad(ac3);
-                AltaActividad(ac4);
-                AltaActividad(ac5);
-                AltaActividad(ac6);
-                AltaActividad(ac7);
-                AltaActividad(ac8);
-                AltaActividad(ac9);
-                AltaActividad(ac10);
-                AltaActividad(ac11);
-                AltaActividad(ac12);
-                AltaActividad(ac13);
-                AltaActividad(ac14);
-                AltaActividad(ac15);
-                AltaActividad(ac16);
-                AltaActividad(ac17);
-                AltaActividad(ac18);
-                AltaActividad(ac19);
-                AltaActividad(ac20);
-                AltaActividad(ac21);
-                AltaActividad(ac22);
-                AltaActividad(ac23);
-                AltaActividad(ac24);
-                AltaActividad(ac25);
-            }
+            Actividad ac23 = new ActividadTercerizada("tim harford", "Charlas Motivadoras", new DateTime(2023, 08, 21), 35, 18, 0, 35, false, new DateTime(2023, 09, 05), pro10);
+            Actividad ac24 = new ActividadTercerizada("steven johnson", "Charlas Motivadoras", new DateTime(2023, 07, 20), 35, 18, 0, 35, false, new DateTime(2023, 05, 25), pro10);
+            Actividad ac25 = new ActividadTercerizada("diana laufenberg", "Charlas Motivadoras", new DateTime(2023, 10, 27), 35, 18, 0, 35, false, new DateTime(2023, 08, 12), pro10);
+            AltaActividad(ac1);
+            AltaActividad(ac2);
+            AltaActividad(ac3);
+            AltaActividad(ac4);
+            AltaActividad(ac5);
+            AltaActividad(ac6);
+            AltaActividad(ac7);
+            AltaActividad(ac8);
+            AltaActividad(ac9);
+            AltaActividad(ac10);
+            AltaActividad(ac11);
+            AltaActividad(ac12);
+            AltaActividad(ac13);
+            AltaActividad(ac14);
+            AltaActividad(ac15);
+            AltaActividad(ac16);
+            AltaActividad(ac17);
+            AltaActividad(ac18);
+            AltaActividad(ac19);
+            AltaActividad(ac20);
+            AltaActividad(ac21);
+            AltaActividad(ac22);
+            AltaActividad(ac23);
+            AltaActividad(ac24);
+            AltaActividad(ac25);
+
+
+            Usuario u1 = new Huesped("CI", "78256463", "Roberto", "Bonilla", "325", new DateTime(1964, 10, 27), 2, "rbonilla@mimail.com", "7685241");
+            AltaUsuario(u1);
+
+        }
         #endregion
 
         #region Listas
-        List<Usuario> _usuarios = new List<Usuario>();
-        List<Actividad> _actividades = new List<Actividad>();
-        List<Proveedor> _proveedores = new List<Proveedor>();
+        private List<Usuario> _usuarios = new List<Usuario>();
+        private List<Actividad> _actividades = new List<Actividad>();
+        private List<Proveedor> _proveedores = new List<Proveedor>();
 
         #endregion
 
@@ -119,7 +124,8 @@ namespace Obligatorio1
         {
             try
             {
-                //TODO
+                usu.EsValido();
+                _usuarios.Add(usu);
             }
             catch (Exception)
             {
@@ -131,12 +137,13 @@ namespace Obligatorio1
         {
             try
             {
-                //TODO
+                act.EsValido();
+                _actividades.Add(act);
             }
-            catch (Exception)
+            catch (Exception e)
             {
 
-                throw;
+                throw e;
             }
         }
         public void AltaProveedor(Proveedor prov)
@@ -171,7 +178,36 @@ namespace Obligatorio1
         #endregion
 
         #region Requerimientos
+        public List<Actividad> getActividadesSegunFechayCosto(DateTime fechaini, DateTime fechafin, double costo)
+        {
+            List<Actividad> ret = new List<Actividad>();
 
+               foreach(Actividad act in _actividades)
+            {
+                if(act.CostoDolares > costo && act.Fecha > fechaini && act.Fecha < fechafin)
+                {
+                        ret.Add(act);
+                }
+            }return ret;
+
+        }
+
+
+        public bool establecerValorPromociondeProveedor(double valor, int idProv)
+        {
+            Proveedor prov = null;
+            if (prov.Id.Equals(idProv)) { 
+                return true;
+            }
+            return false;
+        }
+
+        public List<Proveedor> GetProveedoresAlfabeticamente()
+        {
+            _proveedores.Sort();
+            return _proveedores;
+        }
+         
 
         #endregion
     }

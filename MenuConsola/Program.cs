@@ -26,7 +26,7 @@ namespace MenuConsola
                         if(todas.Count > 0) { 
                         foreach(Actividad actividad in todas)
                             {
-                                Console.WriteLine(actividad.Id);
+                                Console.WriteLine(actividad.Nombre);
                             }
                         }
                         else
@@ -38,8 +38,21 @@ namespace MenuConsola
                         break;
 
                     case 2:
-                        //Console.WriteLine(Sistema.GetProveedor());
-                        //TODO
+                        List<Proveedor> todos = s.GetProveedoresAlfabeticamente();
+                        if(todos.Count > 0)
+                        {
+                            foreach (Proveedor proveedor in todos)
+                            {
+                                Console.WriteLine(proveedor.ToString);
+                            }
+                        }
+                        else
+                        {
+                            Console.WriteLine("No hay Prveedores");
+                        }
+
+
+
                         break;
 
                     case 3:
@@ -54,7 +67,7 @@ namespace MenuConsola
                         break;
 
                     case 4:
-                        Console.WriteLine("Ingrese IdProveeodr");
+                        Console.WriteLine("Ingrese IdProveedor");
                         int idProv = int.Parse(Console.ReadLine());
                         Console.WriteLine("Ingrese Nuevo valor Promocion.");
                         double valPromo = Double.Parse(Console.ReadLine());

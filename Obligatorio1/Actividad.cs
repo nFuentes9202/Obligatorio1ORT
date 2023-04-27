@@ -52,5 +52,13 @@ namespace Obligatorio1
                 throw new Exception("El nombre no puede contener más de 25 caracteres");
             }
         }
+
+
+        public override string ToString()
+        {
+            return $"{Id} {Nombre} {Descripcion} {Fecha} {CantMaxPersonas} {EdadMinima}";
+        }
+
+
     }
 }
