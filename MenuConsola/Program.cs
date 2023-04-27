@@ -43,12 +43,12 @@ namespace MenuConsola
                         {
                             foreach (Proveedor proveedor in todos)
                             {
-                                Console.WriteLine(proveedor.ToString);
+                                Console.WriteLine(proveedor.ToString());
                             }
                         }
                         else
                         {
-                            Console.WriteLine("No hay Prveedores");
+                            Console.WriteLine("No hay Proveedores");
                         }
 
 
