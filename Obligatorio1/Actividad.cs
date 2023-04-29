@@ -8,7 +8,7 @@ namespace Obligatorio1
 {
     public abstract class Actividad:IValidacion
     {
-        public static int UltimoId { get; set; }
+        public static int UltimoId = 121;
         public int Id { get; set; }
         public string Nombre { get; set; }
         public string Descripcion { get; set; }
@@ -56,7 +56,7 @@ namespace Obligatorio1
 
         public override string ToString()
         {
-            return $"{Id} {Nombre} {Descripcion} {Fecha} {CantMaxPersonas} {EdadMinima}";
+            return $"Id:{Id},Nombre:{Nombre},Desc.:{Descripcion},Fecha:{Fecha.ToShortDateString()},Cant.max:{CantMaxPersonas},Edad Min.:{EdadMinima}";
         }
 
 

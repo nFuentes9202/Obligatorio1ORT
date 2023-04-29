@@ -26,7 +26,7 @@ namespace MenuConsola
                         if(todas.Count > 0) { 
                         foreach(Actividad actividad in todas)
                             {
-                                Console.WriteLine(actividad.Nombre);
+                                Console.WriteLine(actividad.ToString());
                             }
                         }
                         else
