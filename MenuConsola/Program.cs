@@ -57,26 +57,38 @@ namespace MenuConsola
 
                     case 3:
 
-                        Console.WriteLine("Ingrese Fecha Inicial ");
-                        DateTime fechaini = DateTime.Parse(Console.ReadLine());
-                        Console.WriteLine("Ingrese Fecha Final");
-                        DateTime fechafin = DateTime.Parse(Console.ReadLine());
-                        Console.WriteLine("Ingrese Costo");
-                        double costo = double.Parse(Console.ReadLine());
-
-                        List<Actividad> todasLasActividades = s.getActividadesSegunFechayCosto(fechaini,fechafin,costo);
-                        if (todasLasActividades.Count > 0)
+                        try
                         {
-                            foreach (Actividad actividad in todasLasActividades)
+                            Console.WriteLine("Ingrese Fecha Inicial (dd,mm,aaaa)");
+                            DateTime fechaini = DateTime.Parse(Console.ReadLine());
+                            Console.WriteLine("Ingrese Fecha Final (dd,mm,aaaa)");
+                            DateTime fechafin = DateTime.Parse(Console.ReadLine());
+                            Console.WriteLine("Ingrese Costo");
+                            double costo = double.Parse(Console.ReadLine());
+
+
+                            List<Actividad> todasLasActividades = s.getActividadesSegunFechayCosto(fechaini, fechafin, costo);
+                            if (todasLasActividades.Count > 0)
                             {
-                                Console.WriteLine(actividad.ToString());
+                                foreach (Actividad actividad in todasLasActividades)
+                                {
+                                    Console.WriteLine(actividad.ToString() + " Costo:" + actividad.CostoDolares);
 
+                                }
                             }
+                            else
+                            {
+                                Console.WriteLine("No hay Actividades");
+                            }
+
+
                         }
-                        else
+                        catch (Exception e)
                         {
-                            Console.WriteLine("No hay Actividades");
+
+                            Console.WriteLine("ERROR" + " " + e.Message);
                         }
+                  
                         break;
 
                     case 4:
