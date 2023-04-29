@@ -119,7 +119,7 @@ namespace MenuConsola
                         int nivFidelidad = int.Parse(Console.ReadLine());
                         Console.WriteLine("Ingrese Email");
                         string email = Console.ReadLine();
-                        Console.WriteLine("Ingrese contraseña (de 8 digitos o mas");
+                        Console.WriteLine("Ingrese contraseña (de 8 digitos o mas)");
                         string contrasenia = Console.ReadLine();
 
                         Huesped nuevo = new Huesped(tipoDoc,numDoc,nombre,apellido,habitacion,fechaNac,nivFidelidad,email,contrasenia);
