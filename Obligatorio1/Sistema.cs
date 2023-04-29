@@ -106,7 +106,7 @@ namespace Obligatorio1
             AltaActividad(ac25);
 
 
-            Usuario u1 = new Huesped("CI", "78256463", "Roberto", "Bonilla", "325", new DateTime(1964, 10, 27), 2, "rbonilla@mimail.com", "7685241");
+            Usuario u1 = new Huesped("CI", "78256463", "Roberto", "Bonilla", "325", new DateTime(1964, 10, 27), 2, "rbonilla@mimail.com", "768524121");
             AltaUsuario(u1);
 
         }

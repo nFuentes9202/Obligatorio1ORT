@@ -42,6 +42,7 @@ namespace Obligatorio1
 
         public override void EsValido()
         {
+            base.EsValido();
             if (String.IsNullOrEmpty(Habitacion))
             {
                 if(TipoDocumento == "CI")

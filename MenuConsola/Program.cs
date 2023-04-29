@@ -56,6 +56,7 @@ namespace MenuConsola
                         break;
 
                     case 3:
+
                         Console.WriteLine("Ingrese Fecha Inicial");
                         DateTime fechaini = DateTime.Parse(Console.ReadLine());
                         Console.WriteLine("Ingrese Fecha Final");
