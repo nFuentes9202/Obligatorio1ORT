@@ -62,6 +62,8 @@ namespace Obligatorio1
 
         public Proveedor(string nombreUnico,string telefono, string direccion, double descuento)
         {
+            Id = UltimoId;
+            UltimoId++;
             NombreUnico = nombreUnico;
             Telefono = telefono;
             Direccion = direccion;

@@ -101,9 +101,11 @@ namespace MenuConsola
                         break;
 
                     case 5:
-                        Console.WriteLine("Ingrese Tipo de Documento");
+                        try
+                        {
+                        Console.WriteLine("Ingrese Tipo de Documento (CI, PASAPORTE , OTROS)");
                         string tipoDoc = Console.ReadLine();
-                        Console.WriteLine("Ingrese Numero de Documento");
+                        Console.WriteLine("Ingrese Numero de Documento (Sin puntos ni guiones)");
                         string numDoc = Console.ReadLine();
                         Console.WriteLine("Ingrese Nombre");
                         string nombre = Console.ReadLine();
@@ -111,18 +113,17 @@ namespace MenuConsola
                         string apellido = Console.ReadLine();
                         Console.WriteLine("Ingrese Habitacion");
                         string habitacion = Console.ReadLine();
-                        Console.WriteLine("Ingrese Fecha de Nacimiento");
+                        Console.WriteLine("Ingrese Fecha de Nacimiento (dd,mm,aaaa)");
                         DateTime fechaNac = DateTime.Parse(Console.ReadLine());
-                        Console.WriteLine("Ingrese nivel de Fidelidad");
+                        Console.WriteLine("Ingrese nivel de Fidelidad de 1 a 4");
                         int nivFidelidad = int.Parse(Console.ReadLine());
                         Console.WriteLine("Ingrese Email");
                         string email = Console.ReadLine();
-                        Console.WriteLine("Ingrese contrasenia");
+                        Console.WriteLine("Ingrese contraseña (de 8 digitos o mas");
                         string contrasenia = Console.ReadLine();
 
                         Huesped nuevo = new Huesped(tipoDoc,numDoc,nombre,apellido,habitacion,fechaNac,nivFidelidad,email,contrasenia);
-                        try
-                        {
+                        
                             s.AltaUsuario(nuevo);
                             Console.WriteLine("Huesped Registrado!");
                         }
