@@ -70,7 +70,7 @@ namespace Obligatorio1
 
         public override string ToString()
         {
-            return $"{NombreUnico} {Telefono} {Direccion} {Descuento}";
+            return $"Nombre:{NombreUnico},Tel:{Telefono},Dir:{Direccion},Descuento:{Descuento}%";
         }
 
     }

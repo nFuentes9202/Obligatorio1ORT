@@ -57,14 +57,26 @@ namespace MenuConsola
 
                     case 3:
 
-                        Console.WriteLine("Ingrese Fecha Inicial");
+                        Console.WriteLine("Ingrese Fecha Inicial ");
                         DateTime fechaini = DateTime.Parse(Console.ReadLine());
                         Console.WriteLine("Ingrese Fecha Final");
                         DateTime fechafin = DateTime.Parse(Console.ReadLine());
                         Console.WriteLine("Ingrese Costo");
                         double costo = double.Parse(Console.ReadLine());
 
-                          //TODO
+                        List<Actividad> todasLasActividades = s.getActividadesSegunFechayCosto(fechaini,fechafin,costo);
+                        if (todasLasActividades.Count > 0)
+                        {
+                            foreach (Actividad actividad in todasLasActividades)
+                            {
+                                Console.WriteLine(actividad.ToString());
+
+                            }
+                        }
+                        else
+                        {
+                            Console.WriteLine("No hay Actividades");
+                        }
                         break;
 
                     case 4:

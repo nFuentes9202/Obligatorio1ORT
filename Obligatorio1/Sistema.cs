@@ -188,9 +188,14 @@ namespace Obligatorio1
                 {
                         ret.Add(act);
                 }
-            }return ret;
-
+            }
+            
+            ret.Sort();
+            return ret;
         }
+
+
+
 
 
         public bool establecerValorPromociondeProveedor(double valor, int idProv)
