@@ -92,12 +92,21 @@ namespace MenuConsola
                         break;
 
                     case 4:
-                        Console.WriteLine("Ingrese IdProveedor");
-                        int idProv = int.Parse(Console.ReadLine());
-                        Console.WriteLine("Ingrese Nuevo valor Promocion.");
-                        double valPromo = Double.Parse(Console.ReadLine());
-                     
-                        s.EstablecerValorPromociondeProveedor(idProv, valPromo);
+                        try
+                        {
+                            Console.WriteLine("Ingrese IdProveedor");
+                            int idProv = int.Parse(Console.ReadLine());
+                            Console.WriteLine("Ingrese Nuevo valor Promocion.");
+                            double valPromo = Double.Parse(Console.ReadLine());
+
+                            s.EstablecerValorPromociondeProveedor(idProv, valPromo);
+                        }
+                        catch (Exception e)
+                        {
+
+                            Console.WriteLine($"ERROR {e.Message}");
+                        }
+                        
                         break;
 
                     case 5:

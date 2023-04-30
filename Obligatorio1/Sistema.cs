@@ -124,6 +124,13 @@ namespace Obligatorio1
         {
             try
             {
+                if(usu is Huesped)
+                {
+                   if(CedulaYaExistente(usu as Huesped))
+                    {
+                        throw new Exception("Cedula de identidad ya existente");
+                    }
+                }
                 usu.EsValido();
                 _usuarios.Add(usu);
             }
@@ -216,7 +223,18 @@ namespace Obligatorio1
             _proveedores.Sort();
             return _proveedores;
         }
-         
+        private bool CedulaYaExistente(Huesped huesped)
+        {
+            bool ret = false;
+            foreach(Huesped hues in _usuarios)
+            {
+                if(hues.TipoDocumento == "CI" && hues.NumeroDocumento == huesped.NumeroDocumento)
+                {
+                    ret = true;
+                }
+            }
+            return ret;
+        }
 
         #endregion
     }

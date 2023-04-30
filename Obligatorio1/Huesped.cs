@@ -43,6 +43,10 @@ namespace Obligatorio1
         public override void EsValido()
         {
             base.EsValido();
+            if(TipoDocumento != "CI" && TipoDocumento != "PASAPORTE" && TipoDocumento != "OTROS")
+            {
+                throw new Exception("Tipo de documento no válido, ingrese un valor correcto");
+            }
             if (String.IsNullOrEmpty(Habitacion))
             {
                 if(TipoDocumento == "CI")
@@ -82,5 +86,6 @@ namespace Obligatorio1
             int digitoVerificador = int.Parse(cedula[7].ToString());
             return verificador == digitoVerificador;
         }
+        
     }
 }
