@@ -198,11 +198,15 @@ namespace Obligatorio1
 
 
 
-        public bool establecerValorPromociondeProveedor(double valor, int idProv)
-        {
-            Proveedor prov = null;
-            if (prov.Id.Equals(idProv)) { 
-                return true;
+        public bool EstablecerValorPromociondeProveedor(int idProv, double valor) {
+
+            foreach (Proveedor pro in _proveedores)
+            {
+                if (pro.Id.Equals(idProv))
+                {
+                    pro.Descuento = ((valor * 100) - 100);
+                    return true;
+                }
             }
             return false;
         }

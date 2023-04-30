@@ -97,7 +97,7 @@ namespace MenuConsola
                         Console.WriteLine("Ingrese Nuevo valor Promocion.");
                         double valPromo = Double.Parse(Console.ReadLine());
                      
-                        //TODO
+                        s.EstablecerValorPromociondeProveedor(idProv, valPromo);
                         break;
 
                     case 5:
