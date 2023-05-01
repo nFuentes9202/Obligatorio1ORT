@@ -98,8 +98,17 @@ namespace MenuConsola
                             int idProv = int.Parse(Console.ReadLine());
                             Console.WriteLine("Ingrese Nuevo valor Promocion.");
                             double valPromo = Double.Parse(Console.ReadLine());
-
-                            s.EstablecerValorPromociondeProveedor(idProv, valPromo);
+                            if(valPromo < 0 || valPromo > 100)
+                            {
+                                throw new Exception("El valor de promocion debe estar comprendido entre 0 y 100");
+                            }
+                            if(s.EstablecerValorPromociondeProveedor(idProv, valPromo))
+                            {
+                                Console.WriteLine("Valor establecido correctamente");
+                            }else
+                            {
+                                Console.WriteLine("Proveedor no encontrado");
+                            }
                         }
                         catch (Exception e)
                         {
