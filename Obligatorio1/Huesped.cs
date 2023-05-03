@@ -59,6 +59,7 @@ namespace Obligatorio1
             }
 
         }
+        //Método de validacion de la cédula verificando digito verificador. Verifica que el formato sea válido, y verifica digito.
         private static bool EsCedulaValida(string cedula)
         {
             if(cedula.Length != 8)

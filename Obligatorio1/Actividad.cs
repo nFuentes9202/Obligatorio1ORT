@@ -9,7 +9,7 @@ namespace Obligatorio1
     public abstract class Actividad : IValidacion, IComparable<Actividad>
     {
  
-    public static int UltimoId = 121;
+    public static int UltimoId = 1;
         public int Id { get; set; }
         public string Nombre { get; set; }
         public string Descripcion { get; set; }

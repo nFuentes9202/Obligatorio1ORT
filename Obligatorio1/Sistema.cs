@@ -57,9 +57,9 @@ namespace Obligatorio1
             Actividad ac1 = new ActividadHostal("Campeonato de Pool", "Juego de mesa indoor", new DateTime(2023, 05, 12), 20, 18, 15, 20, "Roberto", "Salon de Juegos", false);
             Actividad ac2 = new ActividadHostal("Campeonato de Ping Pong", "Juego de mesa indoor", new DateTime(2023, 06, 05), 26, 15, 10, 26, "Roberto", "Salon de Juegos", false);
             Actividad ac3 = new ActividadHostal("Campeonato de Tenis", "Partidos de Tenis singles", new DateTime(2023, 09, 16), 12, 18, 25, 12, "Andres", "Canchas de Tenis", true);
-            Actividad ac4 = new ActividadHostal("Campeonato de Futbol5", "Partidos de futbol 5 por equipo", new DateTime(2023, 10, 15), 30, 18, 75, 30, "Andres", "Canchas de Futbol", true);
+            Actividad ac4 = new ActividadHostal("Campeonato de Futbol 5", "Partidos de futbol 5 por equipo", new DateTime(2023, 10, 15), 30, 18, 75, 30, "Andres", "Canchas de Futbol", true);
             Actividad ac5 = new ActividadHostal("Campeonato de Ajedrez", "Juego de mesa indoor", new DateTime(2023, 07, 11), 8, 5, 0, 8, "Roberto", "Salon de Juegos", false);
-            Actividad ac6 = new ActividadHostal("Campeonato de Pesca", "Activdad Acuatica", new DateTime(2023, 08, 22), 50, 10, 30, 50, "Sebastian", "Lago", true);
+            Actividad ac6 = new ActividadHostal("Campeonato de Pesca", "Actividad Acuatica", new DateTime(2023, 08, 22), 50, 10, 30, 50, "Sebastian", "Lago", true);
             Actividad ac7 = new ActividadHostal("Torneo de Golf", "Competencia mixta a 9 hoyos", new DateTime(2023, 10, 18), 35, 21, 100, 35, "Andres", "Campo de Golf", true);
             Actividad ac8 = new ActividadHostal("Torneo de Poker", "Juego de mesa indoor", new DateTime(2023, 07, 16), 25, 18, 0, 25, "Roberto", "Salon de Juegos", false);
             Actividad ac9 = new ActividadHostal("Cabalgata", "Recorriendo el Lago y los Jardines", new DateTime(2023, 10, 20), 10, 15, 10, 10, "Sebastian", "Perimetro Exterior", true);
@@ -185,6 +185,7 @@ namespace Obligatorio1
         #endregion
 
         #region Requerimientos
+        //Toma 2 fechas en formatos precisos, y un costo. Retorna las actividades que estén entre ambas fechas, mayores al costo dado.
         public List<Actividad> getActividadesSegunFechayCosto(DateTime fechaini, DateTime fechafin, double costo)
         {
             List<Actividad> ret = new List<Actividad>();
@@ -204,7 +205,7 @@ namespace Obligatorio1
 
 
 
-
+        //Busca al proveedor por id, y establece el valor que le pasemos por parametro en el objeto encontrado. Retorna booleano para saber si la operación fue exitosa.
         public bool EstablecerValorPromociondeProveedor(int idProv, double valor) {
 
             foreach (Proveedor pro in _proveedores)
@@ -223,6 +224,7 @@ namespace Obligatorio1
             _proveedores.Sort();
             return _proveedores;
         }
+        //Metodo para comprobar si la combinación cedula y tipoDocumento es válida. Retorna booleano.
         private bool CedulaYaExistente(Huesped huesped)
         {
             bool ret = false;
