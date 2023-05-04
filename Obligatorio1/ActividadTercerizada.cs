@@ -18,6 +18,8 @@ namespace Obligatorio1
             FechaConfirmacion = fechaConfirmacion;
             Proveedor = proveedor;
         }
+
+        //En este caso toma la validacion de su padre (Actividad)
         public override void EsValido()
         {
             base.EsValido();

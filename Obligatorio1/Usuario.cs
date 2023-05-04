@@ -26,6 +26,7 @@ namespace Obligatorio1
             Contrasenia = contrasenia;
         }
 
+        //Validacion
         public virtual void EsValido()
         {
             if (!Email.Contains("@"))

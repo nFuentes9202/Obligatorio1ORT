@@ -10,6 +10,7 @@ namespace Obligatorio1
     public class Sistema
     {
         #region Singleton
+        //Singleton
         private static Sistema _instance = null;
         private Sistema()
         {
@@ -27,6 +28,7 @@ namespace Obligatorio1
         #endregion
 
         #region Precarga 
+        //Datos de Precarga
 
         private void Precarga()
         {
@@ -113,6 +115,7 @@ namespace Obligatorio1
         #endregion
 
         #region Listas
+        //Listas
         private List<Usuario> _usuarios = new List<Usuario>();
         private List<Actividad> _actividades = new List<Actividad>();
         private List<Proveedor> _proveedores = new List<Proveedor>();
@@ -170,6 +173,7 @@ namespace Obligatorio1
         #endregion
 
         #region GetSet
+        
         public List<Usuario> GetUsuarios()
         {
             return _usuarios;

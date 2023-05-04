@@ -19,7 +19,7 @@ namespace Obligatorio1
             EsAlAireLibre = esAlAireLibre;
         }
 
-
+        //Validacion 
         public override void EsValido()
         {
             if(String.IsNullOrEmpty(NomPersonaResponsable)) {

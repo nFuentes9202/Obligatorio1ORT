@@ -34,6 +34,8 @@ namespace Obligatorio1
             CostoDolares = costoDolares;
             LugaresDisponibles = lugaresDisponibles;
         }
+
+        //Validaciones 
         public virtual void EsValido()
         {
             if (String.IsNullOrEmpty(Nombre))
@@ -54,6 +56,7 @@ namespace Obligatorio1
             }
         }
 
+        //Nos devuelve la lista de actividades ordenada por costo descendente
     public int CompareTo(Actividad? other)
     {
         if (CostoDolares.CompareTo(other.CostoDolares) > 0)
@@ -70,7 +73,7 @@ namespace Obligatorio1
 
         }
     }
-
+        //Formateamos el ToString para que se muestre la lista de Actividades como quieramos.
     public override string ToString()
         {
             return $"Id:{Id},Nombre:{Nombre},Desc.:{Descripcion},Fecha:{Fecha.ToShortDateString()},Cant.max:{CantMaxPersonas},Edad Min.:{EdadMinima}";

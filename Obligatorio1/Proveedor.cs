@@ -21,7 +21,7 @@ namespace Obligatorio1
 
 
          
-
+        //Validacion
         public void EsValido()
         {
             if (string.IsNullOrEmpty(NombreUnico))
@@ -37,7 +37,7 @@ namespace Obligatorio1
                 throw new Exception("La direccion de correo no puede ser vacio o nulo");
             }
         }
-
+        //Devuelve la lista de proveedores ordenada alfabeticamente por nombre.
         public int CompareTo(Proveedor? other)
         {
             if (NombreUnico.CompareTo(other.NombreUnico) > 0)
@@ -69,7 +69,7 @@ namespace Obligatorio1
             Direccion = direccion;
             Descuento = descuento;
         }
-
+        //Formateamos el ToString para que se muestre la lista de Proveedores como quieramos.
         public override string ToString()
         {
             return $"Id:{Id},Nombre:{NombreUnico},Tel:{Telefono},Dir:{Direccion},Descuento:{Descuento}%";

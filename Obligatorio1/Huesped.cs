@@ -40,6 +40,7 @@ namespace Obligatorio1
             NivelFidelizacion = nivelFidelizacion;
         }
 
+        //Validacion
         public override void EsValido()
         {
             base.EsValido();
