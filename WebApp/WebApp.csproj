@@ -7,11 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Views\Usuario\" />
-    <Folder Include="Views\Proveedor\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\Obligatorio1\Obligatorio1.csproj" />
   </ItemGroup>
 
