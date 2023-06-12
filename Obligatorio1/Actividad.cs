@@ -36,6 +36,7 @@ namespace Obligatorio1
         }
 
         //Validaciones 
+        public abstract string GetTipo();
         public virtual void EsValido()
         {
             if (String.IsNullOrEmpty(Nombre))

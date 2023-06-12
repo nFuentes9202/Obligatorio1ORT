@@ -21,6 +21,7 @@ namespace Obligatorio1
             Huesped = huesped;
             Actividad = actividad;
         }
+
     }
 
 }

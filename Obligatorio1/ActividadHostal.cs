@@ -27,5 +27,9 @@ namespace Obligatorio1
             }
             base.EsValido();
         }
-    }
+		public override string GetTipo()
+		{
+            return "HOSTAL";
+		}
+	}
 }
