@@ -241,6 +241,18 @@ namespace Obligatorio1
             }
             return ret;
         }
+        // Busca un usuario existente en sistema. Si no lo encuentra retorna null
+        public Usuario Login(string email, string password)
+        {
+            foreach(Usuario usu in _usuarios)
+            {
+                if(usu.Email.Equals(email) && usu.Contrasenia.Equals(password))
+                {
+                    return usu;
+                }
+            }
+            return null;
+        }
 
         #endregion
     }
