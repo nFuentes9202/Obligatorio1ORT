@@ -1,0 +1,75 @@
+﻿@*Ejemplo de una grilla*@
+@model IEnumerable<Obligatorio1.Actividad>
+<h1>Lista de actividades</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+               ID
+            </th>
+            <th>
+               Nombre
+            </th>
+            <th>
+               Descripcion
+            </th>
+            <th>
+               Fecha
+            </th>
+            <th>
+               Cantidad máxima de personas
+            </th>
+            <th>
+               Edad Minima
+            </th>
+            <th>
+                Costo en dólares
+            </th>
+            <th>
+                Lugares disponibles
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+          
+            <td>
+                    @item.Id
+            </td>
+            <td>
+                    @item.Nombre
+            </td>
+            <td>
+                    @item.Descripcion
+            </td>
+            <td>
+                    @item.Fecha
+            </td>
+            <td>
+                    @item.CantMaxPersonas
+            </td>
+            <td>
+                    @item.EdadMinima
+            </td>
+                <td>
+                    @item.CostoDolares
+                </td>
+                <td>
+                    @item.LugaresDisponibles
+                </td>
+            <td>
+                    @Html.ActionLink("Editar", "Edit", new {  id=item.Id }) |
+                    @Html.ActionLink("Detalles", "Details", new {  id=item.Id }) |
+                    @Html.ActionLink("Desactivar", "Delete", new {  id=item.Id })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
