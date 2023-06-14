@@ -31,25 +31,43 @@
                             </li>
 
                             <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Usuario" asp-action="Registro">Registrarse</a>
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Huesped" asp-action="Registro">Registrarse</a>
                             </li>
 
                             
                         }
                         @if(Context.Session.GetInt32("LogueadoId") != null)
                         {
+                            if (Context.Session.GetString("LogueadoTipo").Equals("Huesped"))
+                            {
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="Actividad" asp-action="Agendar">Agendarse</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="Agenda" asp-action="Index">Ver las agendas</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="Huesped" asp-action="Details">Perfil</a>
+                                </li>
+                            }
+                            else
+                            {
+                               
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="Agenda" asp-action="Index">Ver agendas</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="Proveedor" asp-action="Promocion">Establecer promoción</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="Operador" asp-action="Details">Perfil</a>
+                                </li>
+                            }
                             <li class="nav-item">
                                 <a class="nav-link text-dark" asp-area="" asp-controller="Autorizacion" asp-action="Logout">Cerrar sesión</a>
                             </li>
                             
                         }
-                        
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
                         
                     </ul>
                 </div>
