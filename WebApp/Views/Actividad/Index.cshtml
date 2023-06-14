@@ -65,6 +65,10 @@
                     @item.LugaresDisponibles
                 </td>
             <td>
+                    @if (Context.Session.GetString("LogueadoTipo") == null || Context.Session.GetString("LogueadoTipo").Equals("Huesped"))
+                    {
+                        @Html.ActionLink("Agendar", "Agendar","Agenda")
+                    }
                     @Html.ActionLink("Editar", "Edit", new {  id=item.Id }) |
                     @Html.ActionLink("Detalles", "Details", new {  id=item.Id }) |
                     @Html.ActionLink("Desactivar", "Delete", new {  id=item.Id })
