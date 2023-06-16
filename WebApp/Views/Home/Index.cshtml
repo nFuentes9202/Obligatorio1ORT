@@ -1,8 +1,35 @@
-﻿@{
+﻿<link rel="stylesheet" href="~/css/Home/Index.css" asp-append-version="true" />
+@{
     ViewData["Title"] = "Home Page";
 }
+@model IEnumerable<Obligatorio1.Actividad>
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <h1 class="display-4">Bienvenido a Hosta<span style="color:red">l</span>ia</h1>
+    <p>La manera mas facil de planificar sus vacaciones.</a>.</p>
+</div>
+
+<div class="text-center">
+    <h2 class="display-6">Actividades Disponibles</h2>
+</div>
+
+
+<div class="tarjetas">
+@foreach(var actividad in Model)
+{
+    <div class="card text-center">
+        <div class="card-header">
+            @actividad.Nombre
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">@actividad.Fecha</h5>
+            <p class="card-text">@actividad.Descripcion</p>
+                <a class="btn btn-outline-secondary" href="@Url.Action("Agendarse","Actividad",new{id=actividad.Id})">Agendarse</a>
+        </div>
+        <div class="card-footer text-muted">
+            @actividad.LugaresDisponibles Lugares Disponibles
+        </div>
+        </div>
+}
+
 </div>

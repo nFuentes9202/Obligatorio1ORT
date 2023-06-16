@@ -1,11 +1,16 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Obligatorio1;
 using System.Diagnostics;
 using WebApp.Models;
+
 
 namespace WebApp.Controllers
 {
     public class HomeController : Controller
     {
+        Sistema s = Sistema.GetInstancia();
+
+
         private readonly ILogger<HomeController> _logger;
 
         public HomeController(ILogger<HomeController> logger)
@@ -15,7 +20,7 @@ namespace WebApp.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            return View(s.GetActividades());
         }
 
         public IActionResult Login()

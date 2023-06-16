@@ -1,4 +1,13 @@
-﻿.form-signin {
+﻿main {
+    background-color: oldlace;
+}
+
+html {
+    background-color: lightgray;
+}
+
+
+.form-signin {
     max-width: 330px;
     padding: 1rem;
 }
@@ -19,11 +28,4 @@
         border-top-right-radius: 0;
     }
 
-main {
-    background-color: oldlace;
-}
-
-html {
-    background-color: lightgray;
-}
 

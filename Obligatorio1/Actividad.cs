@@ -18,9 +18,11 @@ namespace Obligatorio1
         public int EdadMinima { get; set; }
         public double CostoDolares { get; set; }
         public int LugaresDisponibles { get; set; }
+
         public Actividad()
         {
-
+            Id = UltimoId;
+            UltimoId++;
         }
         public Actividad(string nombre, string descripcion, DateTime fecha, int cantMaxPersonas, int edadMinima, double costoDolares, int lugaresDisponibles)
         {
@@ -57,8 +59,10 @@ namespace Obligatorio1
             }
         }
 
+      
+
         //Nos devuelve la lista de actividades ordenada por costo descendente
-    public int CompareTo(Actividad? other)
+        public int CompareTo(Actividad? other)
     {
         if (CostoDolares.CompareTo(other.CostoDolares) > 0)
         {
