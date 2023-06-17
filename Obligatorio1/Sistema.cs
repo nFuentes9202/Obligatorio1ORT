@@ -269,6 +269,18 @@ namespace Obligatorio1
             return ret; 
         }
 
+        public List<Actividad> getActividadesSegunFecha(DateTime buscada)
+        {
+            List<Actividad> ret = new List<Actividad>();
+            foreach(Actividad act in _actividades)
+            {
+                if (act.Fecha.Date.Equals(buscada.Date)){
+                    ret.Add(act);
+                }
+            }
+            return ret;
+        }
+
 
 
         #endregion

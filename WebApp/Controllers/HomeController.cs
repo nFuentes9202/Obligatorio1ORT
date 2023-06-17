@@ -22,11 +22,23 @@ namespace WebApp.Controllers
         {
             return View(s.GetActividades());
         }
+        [HttpPost]
+        public IActionResult BuscarActividadPorFecha(DateTime FechaBuscada)
+        {
+            if(FechaBuscada ==  DateTime.MinValue)
+            {
+                return View("Index",s.GetActividades());
+            }
+            List<Actividad> buscadas = new List<Actividad>();
+            buscadas = s.getActividadesSegunFecha(FechaBuscada);
+            return View("Index",buscadas);
 
+        }
         public IActionResult Login()
         {
             return View();
         }
+        
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

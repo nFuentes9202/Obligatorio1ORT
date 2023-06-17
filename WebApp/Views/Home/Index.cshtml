@@ -10,7 +10,13 @@
 <div class="text-center">
     <h2 class="display-6">Actividades Disponibles</h2>
 </div>
-
+<div class="justify-content-center">
+    <form method="post" asp-action="BuscarActividadPorFecha">
+    <label for="strFecha">Buscar fecha</label>
+    <input type="date" id="strFecha" name="FechaBuscada" class="form-control" placeholder="Ingrese una fecha" asp-action="BuscarActividad"/>
+    <input type="submit" value="Buscar" class="btn-primary"/>
+</form>
+</div>
 
 <div class="tarjetas">
 @foreach(var actividad in Model)
