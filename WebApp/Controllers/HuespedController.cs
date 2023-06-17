@@ -8,7 +8,17 @@ namespace WebApp.Controllers
         Sistema s = Sistema.GetInstancia();
         public IActionResult Registro()
         {
-            return View();
+            string? tipoUsuario = HttpContext.Session.GetString("LogueadoTipo");
+
+            if(tipoUsuario == null)
+            {
+                return View();
+            }
+            else
+            {
+                return RedirectToAction("Index", "Home");
+            }
+            
         }
         [HttpPost]
         public IActionResult Registro(Huesped huesped)
@@ -17,6 +27,7 @@ namespace WebApp.Controllers
             {
                 s.AltaUsuario(huesped);
                 ViewBag.msgRegistro = "Se creo exitosamente su usuario";
+                
             }
             catch (Exception e)
             {
