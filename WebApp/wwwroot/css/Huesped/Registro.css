@@ -1,13 +1,4 @@
-﻿main {
-    background-color: oldlace;
-}
-
-html {
-    background-color: lightgray;
-}
-
-
-.form-signin {
+﻿.form-signin {
     max-width: 330px;
     padding: 1rem;
 }
@@ -17,10 +8,14 @@ html {
     }
 
     .form-signin input[type="email"] {
-        margin-bottom: -1px;
+        margin-bottom: 5px;
         border-bottom-right-radius: 0;
         border-bottom-left-radius: 0;
     }
+
+.form-group {
+    margin-top: 10px;
+}
 
     .form-signin input[type="password"] {
         margin-bottom: 10px;
@@ -28,4 +23,10 @@ html {
         border-top-right-radius: 0;
     }
 
+main {
+    background-color: oldlace;
+}
 
+html {
+    background-color: lightgray;
+}

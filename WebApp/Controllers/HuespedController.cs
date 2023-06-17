@@ -11,11 +11,11 @@ namespace WebApp.Controllers
             return View();
         }
         [HttpPost]
-        public IActionResult Registro(Usuario usu)
+        public IActionResult Registro(Usuario huesped)
         {
             try
             {
-                s.AltaUsuario(usu);
+                s.AltaUsuario(huesped);
                 ViewBag.msgRegistro = "Se creo exitosamente su usuario";
             }
             catch (Exception e)

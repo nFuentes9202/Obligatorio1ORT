@@ -1,8 +1,10 @@
-﻿@model Obligatorio1.Huesped
+﻿<link rel="stylesheet" href="~/css/Huesped/Registro.css" asp-append-version="true" />
+
+@model Obligatorio1.Huesped
 <h1>Registrarse</h1>
 <h4>Como Huesped</h4>
 <hr />
-<div class="row">
+<div class="row mx-auto">
     <div class="col-md-4">
         <form method="post">
             <div class="form-group">
@@ -20,9 +22,9 @@
                 <input asp-for="Contrasenia" class="form-control" />
 
                 <label class="control-label">Seleccione su tipo de documento</label>
-
-                <select>
-
+                <select class="form-control">
+                    <option id="1">C.I</option>
+                    <option id="2">Pasaporte</option> 
                 </select>
 
                 <label class="control-label">Numero de documento</label>

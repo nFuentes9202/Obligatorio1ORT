@@ -20,9 +20,6 @@
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
 
-                        <li class="nav-item">
-                            <a class="nav-link text-light" asp-area="" asp-controller="Actividad" asp-action="Index">Ver actividades</a>
-                        </li>
 
                         @if(Context.Session.GetInt32("LogueadoId") == null)
                         {
@@ -40,9 +37,6 @@
                         {
                             if (Context.Session.GetString("LogueadoTipo").Equals("Huesped"))
                             {
-                                <li class="nav-item">
-                                    <a class="nav-link text-light " asp-area="" asp-controller="Actividad" asp-action="Agendar">Agendarse</a>
-                                </li>
                                 <li class="nav-item">
                                     <a class="nav-link text-light" asp-area="" asp-controller="Agenda" asp-action="Index">Ver las agendas</a>
                                 </li>
@@ -64,7 +58,7 @@
                                 </li>
                             }
                             <li class="nav-item">
-                                <a class="nav-link text-light" asp-area="" asp-controller="Autorizacion" asp-action="Logout">Cerrar sesión</a>
+                                <a class="nav-link text-light mr-2" asp-area="" asp-controller="Autorizacion" asp-action="Logout">Cerrar sesión</a>
                             </li>
                             
                         }

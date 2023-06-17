@@ -26,7 +26,7 @@ namespace Obligatorio1
 
         public Huesped()
         {
-            NivelFidelizacion = 1;
+ 
         }
 
         public Huesped(string tipoDocumento, string numeroDocumento, string nombre, string apellido, string habitacion, DateTime fechaNacimiento, int nivelFidelizacion ,string email, string contrasenia):base(email, contrasenia)
