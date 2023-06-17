@@ -106,6 +106,11 @@ namespace Obligatorio1
             AltaActividad(ac23);
             AltaActividad(ac24);
             AltaActividad(ac25);
+            _actividades[4].Fecha = new DateTime(2023,4,12);
+            _actividades[9].Fecha = new DateTime(2023, 2, 22);
+            _actividades[14].Fecha = new DateTime(2023, 3, 05);
+            _actividades[19].Fecha = new DateTime(2023, 5, 30);
+            _actividades[24].Fecha = new DateTime(2023, 6, 12);
 
 
             Usuario u1 = new Huesped("CI", "78256463", "Roberto", "Bonilla", "325", new DateTime(1964, 10, 27), 2, "rbonilla@mimail.com", "768524121");
