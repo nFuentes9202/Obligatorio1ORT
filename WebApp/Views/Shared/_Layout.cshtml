@@ -11,16 +11,17 @@
 <body>
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm border-bottom box-shadow mb-3 navbar-dark bg-dark">
-            <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Hosta<span style="color:red">l</span>ia</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                    <div class="container-fluid">
+                    @*Esto solo lo ven todos los usuarios*@
+                    <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Hosta<span style="color:red">l</span>ia</a>
+                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
+                          <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
 
-
+                        @*Esto solo lo ve el usuario guest*@
                         @if(Context.Session.GetInt32("LogueadoId") == null)
                         {
                             <li class="nav-item">
@@ -31,20 +32,21 @@
                                 <a class="nav-link text-light" asp-area="" asp-controller="Huesped" asp-action="Registro">Registrarse</a>
                             </li>
 
-                            
                         }
+                        @*Esto solo lo ve el usuario Huesped*@
                         @if(Context.Session.GetInt32("LogueadoId") != null)
                         {
                             if (Context.Session.GetString("LogueadoTipo").Equals("Huesped"))
                             {
                                 <li class="nav-item">
-                                    <a class="nav-link text-light" asp-area="" asp-controller="Agenda" asp-action="Index">Ver las agendas</a>
+                                    <a class="nav-link text-light" asp-area="" asp-controller="Agenda" asp-action="Agenda">Ver las agendas</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link text-light" asp-area="" asp-controller="Huesped" asp-action="Details">Perfil</a>
                                 </li>
                             }
                             else
+                            @*Esto solo lo ve el usuario Operador*@
                             {
                                
                                 <li class="nav-item">

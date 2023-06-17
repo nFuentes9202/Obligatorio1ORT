@@ -10,8 +10,8 @@ namespace Obligatorio1
     {
         public static int UltimoId { get; set; }
         public int Id { get; set; }
-        public string Email { get; set; }
-        public string Contrasenia { get; set; }
+        public string? Email { get; set; }
+        public string? Contrasenia { get; set; }
 
         public Usuario()
         {
@@ -26,16 +26,16 @@ namespace Obligatorio1
             Contrasenia = contrasenia;
         }
 
-        //Validacion
+        //Validación
         public virtual void EsValido()
-        {
-            if (!Email.Contains("@"))
+        {   
+            if (Email != null && !Email.Contains("@"))
             {
-                throw new Exception("El email debe tener el simbolo '@'");
+                throw new Exception("El email debe tener el símbolo '@'");
             }
-            if(Email.IndexOf("@") == 0 || Email.IndexOf("@") == Email.Length - 1)
+            if(Email != null &&  Email.IndexOf("@") == 0 || Email != null && Email.IndexOf("@") == Email.Length - 1)
             {
-                throw new Exception("El simbolo '@' no puede estar al final o al inicio del email");
+                throw new Exception("El símbolo '@' no puede estar al final o al inicio del email");
             }
             if(Contrasenia.Length < 8)
             {

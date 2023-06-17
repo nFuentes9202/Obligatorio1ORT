@@ -1,0 +1,29 @@
+﻿<link rel="stylesheet" href="~/css/Agenda/Agenda.css" asp-append-version="true" />
+
+@model IEnumerable<Obligatorio1.Agenda>
+
+<div class="text-center">
+    <h4 class="display-4">Agenda</h4>
+</div>
+
+
+
+<div class="tarjetas">
+    @foreach (var agenda in Model)
+    {
+        <div class="card text-center">
+            <div class="card-header">
+                @agenda.Actividad.CostoDolares
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">@agenda.FechaCreacion</h5>
+                <p class="card-text">@agenda.Actividad.Descripcion</p>
+                <a class="btn btn-outline-secondary" href="@Url.Action("Agendarse","Actividad",new{id=agenda.Actividad.Id})">Agendarse</a>
+            </div>
+            <div class="card-footer text-muted">
+                @agenda.Actividad.EdadMinima Edad Minima
+            </div>
+        </div>
+    }
+
+</div>
