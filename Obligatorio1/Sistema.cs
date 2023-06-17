@@ -254,6 +254,23 @@ namespace Obligatorio1
             return null;
         }
 
+        //Retorna la lista huesped para las vistas
+        public List<Huesped> GetHuesped()
+        {
+            List<Huesped> ret = new List<Huesped>();
+
+            foreach(Usuario u in _usuarios)
+            {
+             if(u is Huesped)
+                {
+                    ret.Add(u as Huesped);
+                }
+            }
+            return ret; 
+        }
+
+
+
         #endregion
     }
 }

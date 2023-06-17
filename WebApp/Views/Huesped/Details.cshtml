@@ -1,0 +1,62 @@
+﻿
+@model IEnumerable<Obligatorio1.Huesped>
+
+<h3>Perfil de Huesped</h3>
+
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+               ID
+            </th>
+            <th>
+               Nombre
+            </th>
+            <th>
+               Apellido
+            </th>
+            <th>
+               Email
+            </th>
+            <th>
+               Fecha de nacimiento
+            </th>
+            <th>
+               Contrasenia
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+          
+            <td>
+                    @item.Id
+            </td>
+            <td>
+                    @item.Nombre
+            </td>
+            <td>
+                    @item.Apellido
+            </td>
+            <td>
+                    @item.Email
+            </td>
+            <td>
+                    @item.FechaNacimiento
+            </td>
+            <td>
+                    @item.Contrasenia
+            </td>
+            <td>
+                    @Html.ActionLink("Editar", "Edit", new {  id=item.Id }) |
+
+
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
