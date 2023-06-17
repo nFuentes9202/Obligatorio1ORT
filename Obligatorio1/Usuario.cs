@@ -15,8 +15,7 @@ namespace Obligatorio1
 
         public Usuario()
         {
-            Id = UltimoId;
-            UltimoId++;
+  
         }
 
         public Usuario(string email, string contrasenia)
