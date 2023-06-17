@@ -11,5 +11,19 @@ namespace WebApp.Controllers
         {
             return View(s.GetActividades());
         }
+
+        public IActionResult Agendarse(int id)
+        {
+            int? lid = HttpContext.Session.GetInt32("LogueadoId");
+            if (lid == null)
+            {
+                return RedirectToAction("Index", "Home");
+            }
+        }
+
+
+
     }
 }
+
+

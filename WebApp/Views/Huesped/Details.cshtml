@@ -46,7 +46,11 @@
                     @item.Email
             </td>
             <td>
-                    @item.FechaNacimiento
+                    @{
+                        DateTime fn = (DateTime)item.FechaNacimiento;
+                    }
+                    @fn.ToString("dd/MM/yyyy")
+
             </td>
             <td>
                     @item.Contrasenia
