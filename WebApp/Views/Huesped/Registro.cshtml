@@ -21,12 +21,12 @@
                 <label class="control-label">Contraseña</label>
                 <input asp-for="Contrasenia" class="form-control" />
 
-                <label class="control-label">Seleccione su tipo de documento</label>
-                <select class="form-control">
-                    <option id="1">C.I</option>
-                    <option id="2">Pasaporte</option> 
+                <label for="tipoDoc">Tipo Documento</label>
+                <select class="form-control" id="tipoDoc">
+                    <option value="CI">CI</option>
+                    <option value="PASAPORTE">PASSAPORTE</option>
                 </select>
-
+                
                 <label class="control-label">Numero de documento</label>
                 <input asp-for="NumeroDocumento" class="form-control" />
 
@@ -35,7 +35,7 @@
 
                 <label for="fechaNac">Fecha de Nacimiento</label>
                 <input id="fechanac" class="form-control" type="date" />
-                <span id="DateSelected"></span>
+                <span id="Fecha"></span>
 
             </div>
             <div class="form-group">

@@ -11,7 +11,7 @@ namespace WebApp.Controllers
             return View();
         }
         [HttpPost]
-        public IActionResult Registro(Usuario huesped)
+        public IActionResult Registro(Huesped huesped)
         {
             try
             {

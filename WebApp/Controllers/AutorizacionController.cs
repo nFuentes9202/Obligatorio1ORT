@@ -8,8 +8,17 @@ namespace WebApp.Controllers
         Sistema s = Sistema.GetInstancia();
         public IActionResult Login()
         {
-            return View();
+            int? lid = HttpContext.Session.GetInt32("LogueadoId");
+            if (lid == null) { 
+                return View();
+            }
+            else
+            {
+                return RedirectToAction("Index", "Home");
+            }
         }
+
+
         [HttpPost]
         public IActionResult Login(string email, string password)
         {
