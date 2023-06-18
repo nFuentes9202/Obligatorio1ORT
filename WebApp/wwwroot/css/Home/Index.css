@@ -1,11 +1,14 @@
-﻿html{
+﻿html {
     background-color: lightgray;
-
+  
 }
 
-main{
-    background-color:oldlace;
+main {
+    background-color: oldlace;
+}
 
+body{
+    justify-content:center
 }
 
 
@@ -16,5 +19,14 @@ main{
 }
 
 .tarjetas {
+    justify-content: center;
+}
+
+.form-control {
+    width: 20rem;
+    margin-top: 10px:
+}
+
+form {
     justify-content: center;
 }

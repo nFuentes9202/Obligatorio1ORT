@@ -355,6 +355,21 @@ namespace Obligatorio1
             return _agendas;
         }
 
+        // valida la edad y disponibilidad para saber si puede agendarse
+        public static bool Cumple(Actividad act, Huesped hue)
+        {
+            bool ret = false;
+
+            int edad = DateTime.Now.Year - hue.FechaNacimiento.Year;
+
+            if (edad >= act.EdadMinima && act.LugaresDisponibles > 0)
+            {
+                ret = true;
+            }
+
+            return ret;
+        }
+
 
         private bool UsuarioYaAgendado(Actividad act, Huesped hues)
         {
@@ -375,22 +390,17 @@ namespace Obligatorio1
             Usuario hues = GetHuespedPorId(idHuesped);
             Actividad act = GetActividadPorId(IdActividad);
 
-            if(act != null)
+            if(act != null && !UsuarioYaAgendado(act, hues as Huesped) && Cumple(act, hues as Huesped))
             {
-                if (UsuarioYaAgendado(act, hues))
-                {
-
-                }
-
-
-
+                Agenda nueva = new Agenda(false, hues as Huesped, act);
+            }
+            else
+            {
+                throw new Exception("No se puede agendar");
             }
 
 
         }
-
-
-
 
         #endregion
     }

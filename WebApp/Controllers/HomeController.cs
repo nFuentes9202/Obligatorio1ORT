@@ -20,6 +20,13 @@ namespace WebApp.Controllers
 
         public IActionResult Index()
         {
+            if (TempData["mensajeAgendado"] != null)
+            {
+                ViewBag.Agendado = TempData["mensajeAgendado"].ToString();
+
+
+            }
+
             return View(s.GetActividades());
         }
         [HttpPost]

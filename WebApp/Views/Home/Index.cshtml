@@ -2,6 +2,8 @@
 
 @model IEnumerable<Obligatorio1.Actividad>
 
+<h5>@ViewBag.Agendado</h5>
+
 <div class="text-center">
     <h1 class="display-4">Bienvenido a Hosta<span style="color:red">l</span>ia</h1>
     <p>La manera mas facil de planificar sus vacaciones.</a>.</p>
@@ -10,10 +12,10 @@
 <div class="text-center">
     <h2 class="display-6">Actividades Disponibles</h2>
 </div>
-<div class="justify-content-center">
+<div class="form-control">
     <form method="post" asp-action="BuscarActividadPorFecha">
-    <label for="strFecha">Buscar fecha</label>
-    <input type="date" id="strFecha" name="FechaBuscada" class="form-control" placeholder="Ingrese una fecha" asp-action="BuscarActividad"/>
+    <label for="strFecha">Buscar actividad por fecha</label>
+    <input type="date" id="strFecha" name="FechaBuscada" class="form-control" asp-action="BuscarActividad"/>
     <input type="submit" value="Buscar" class="btn-primary"/>
 </form>
 </div>
@@ -28,7 +30,7 @@
         <div class="card-body">
             <h5 class="card-title">@actividad.Fecha</h5>
             <p class="card-text">@actividad.Descripcion</p>
-                <a class="btn btn-outline-secondary" href="@Url.Action("AgendarActividad","Actividad",new{id=actividad.Id})">Agendarse</a>
+                <a class="btn btn-outline-secondary" href="@Url.Action("Agendar","Agenda",new{id=actividad.Id})">Agendarse</a>
         </div>
         <div class="card-footer text-muted">
             @actividad.LugaresDisponibles Lugares Disponibles

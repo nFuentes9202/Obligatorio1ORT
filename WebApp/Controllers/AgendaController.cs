@@ -10,6 +10,37 @@ namespace WebApp.Controllers
         {
             return View(s.GetAgendas()) ;
         }
+
+        public IActionResult Agendar(int id)
+        {
+
+            int? lid = HttpContext.Session.GetInt32("LogueadoId");
+
+            if (lid == null )
+            {
+                return RedirectToAction("Index", "Home");
+            }
+
+            try
+            {
+                s.AgendarActividad(id, lid);
+               
+                TempData["mensajeAgendado"] = "Agendado Correctamente.";
+
+                
+            }
+            catch (Exception e)
+            {
+
+                TempData["mensajeAgendado"] = e.Message;
+            }
+
+            return RedirectToAction("Index", "Home");
+        }
+
     }
+
+
+
 }
 
