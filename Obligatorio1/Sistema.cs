@@ -115,6 +115,10 @@ namespace Obligatorio1
 
             Usuario u1 = new Huesped("CI", "78256463", "Roberto", "Bonilla", "325", new DateTime(1964, 10, 27), 2, "rbonilla@mimail.com", "768524121");
             AltaUsuario(u1);
+            Usuario u2 = new Operador("Jorge", "Marona", new DateTime(2020, 05, 10), "jormarona@gmail.com", "Holahola123");
+            Usuario u3 = new Operador("Marcelo", "Marciano", new DateTime(2015, 02, 25), "marciano@gmail.com", "TestTest265");
+            AltaUsuario(u2);
+            AltaUsuario(u3);
 
         }
         #endregion
