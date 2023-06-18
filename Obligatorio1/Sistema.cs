@@ -290,6 +290,34 @@ namespace Obligatorio1
             return ret;
         }
 
+        public Proveedor GetProveedorPorId(int id)
+        {
+            Proveedor ret = new Proveedor();
+            foreach(Proveedor prov in _proveedores)
+            {
+                if (prov.Id.Equals(id))
+                {
+                    return ret;
+                }
+            }
+            return null;
+        }
+
+        public void EstablecerDescuento(int id, double descuento)
+        {
+            if(descuento < 0 || descuento > 100)
+            {
+                throw new Exception("Descuento no válido. Ingrese valores entre el 0 y el 100");
+            }
+            foreach(Proveedor prov in _proveedores)
+            {
+                if(prov.Id.Equals (id))
+                {
+                    prov.Descuento = descuento;
+                }
+            }
+        }
+
 
 
         #endregion

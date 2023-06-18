@@ -1,0 +1,55 @@
+﻿@model IEnumerable<Obligatorio1.Proveedor>
+<h1>Proveedores</h1>
+<h2>@ViewBag.mensajeDescuento</h2>
+<table class="table">
+    <thead>
+        <tr>
+
+            <th>
+                Nombre
+            </th>
+            <th>
+                Teléfono
+            </th>
+            <th>
+                Dirección
+            </th>
+            <th>
+                Descuento
+            </th>
+            <th>
+
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+
+                <td>
+                    @item.NombreUnico
+                </td>
+                <td>
+                    @item.Telefono
+                </td>
+                <td>
+                    @item.Direccion
+                </td>
+                <td>
+                    @item.Descuento<span>%</span>
+                </td>
+                <td>
+                    <form method="post">
+                        <label for="numDescuento">Ingrese el descuento</label>
+                        <input type="hidden" name="id" value="@item.Id" />
+                        <input type="number"  id="numDescuento" name="descuento"/>
+                        <input type="submit" class="btn-primary" asp-action="EstablecerDescuento" value="Aplicar"/>
+                    </form>
+                    
+                    
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
