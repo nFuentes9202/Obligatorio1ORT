@@ -9,7 +9,16 @@ namespace WebApp.Controllers
         
         public IActionResult Index()
         {
-            return View(s.GetProveedoresAlfabeticamente());
+            string? tipoUsuario = HttpContext.Session.GetString("LogueadoTipo");
+            if(tipoUsuario == "Operador")
+            {
+                return View(s.GetProveedoresAlfabeticamente());
+            }
+            else
+            {
+                return RedirectToAction("Index", "Home");
+            }
+            
         }
         [HttpPost]
         public IActionResult EstablecerDescuento(int id,double descuento)
