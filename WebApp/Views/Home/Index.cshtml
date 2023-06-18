@@ -28,7 +28,7 @@
         <div class="card-body">
             <h5 class="card-title">@actividad.Fecha</h5>
             <p class="card-text">@actividad.Descripcion</p>
-                <a class="btn btn-outline-secondary" href="@Url.Action("Agendarse","Actividad",new{id=actividad.Id})">Agendarse</a>
+                <a class="btn btn-outline-secondary" href="@Url.Action("AgendarActividad","Actividad",new{id=actividad.Id})">Agendarse</a>
         </div>
         <div class="card-footer text-muted">
             @actividad.LugaresDisponibles Lugares Disponibles

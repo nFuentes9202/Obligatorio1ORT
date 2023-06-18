@@ -282,6 +282,33 @@ namespace Obligatorio1
             return ret; 
         }
 
+        public Usuario GetHuespedPorId(int? idHuesped)
+        {
+  
+            foreach (Usuario u in _usuarios)
+            {
+                if (u.Id.Equals(idHuesped))
+                {
+                    return u;
+                }
+            }
+            return null;
+        }
+
+        public Actividad GetActividadPorId(int idAct)
+        {
+
+            foreach (Actividad act in _actividades)
+            {
+                if (act.Id.Equals(idAct))
+                {
+                    return act;
+                }
+            }
+            return null;
+        }
+
+
         public List<Actividad> getActividadesSegunFecha(DateTime buscada)
         {
             List<Actividad> ret = new List<Actividad>();
@@ -342,6 +369,27 @@ namespace Obligatorio1
             }
             return ret;
         }
+
+        public void AgendarActividad(int IdActividad, int? idHuesped)
+        {
+            Usuario hues = GetHuespedPorId(idHuesped);
+            Actividad act = GetActividadPorId(IdActividad);
+
+            if(act != null)
+            {
+                if (UsuarioYaAgendado(act, hues))
+                {
+
+                }
+
+
+
+            }
+
+
+        }
+
+
 
 
         #endregion
