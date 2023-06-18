@@ -128,6 +128,7 @@ namespace Obligatorio1
         private List<Usuario> _usuarios = new List<Usuario>();
         private List<Actividad> _actividades = new List<Actividad>();
         private List<Proveedor> _proveedores = new List<Proveedor>();
+        private List<Agenda> _agendas = new List<Agenda>();
 
         #endregion
 
@@ -179,10 +180,13 @@ namespace Obligatorio1
             }
         }
 
+
+
+
         #endregion
 
         #region GetSet
-        
+
         public List<Usuario> GetUsuarios()
         {
             return _usuarios;
@@ -318,6 +322,26 @@ namespace Obligatorio1
             }
         }
 
+        //Retorna la lista de Agendas
+        public List<Agenda> GetAgendas()
+        {
+            return _agendas;
+        }
+
+
+        private bool UsuarioYaAgendado(Actividad act, Huesped hues)
+        {
+            bool ret = false;
+
+            foreach (Agenda age in _agendas)
+            {
+                if (age.Actividad.Equals(act) || age.Huesped.Equals(hues))
+                {
+                    ret = true;
+                }
+            }
+            return ret;
+        }
 
 
         #endregion

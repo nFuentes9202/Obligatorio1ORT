@@ -1,0 +1,18 @@
+﻿html {
+    background-color: lightgray;
+}
+
+main {
+    background-color: oldlace;
+}
+
+
+.card {
+    width: 18.5rem;
+    display: inline-block;
+    margin: 10px;
+}
+
+.tarjetas {
+    justify-content: center;
+}

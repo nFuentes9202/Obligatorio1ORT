@@ -8,7 +8,7 @@ namespace WebApp.Controllers
         Sistema s = Sistema.GetInstancia();
         public IActionResult Index()
         {
-            return View();
+            return View(s.GetAgendas()) ;
         }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection.Metadata.Ecma335;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -12,7 +13,12 @@ namespace Obligatorio1
         public bool Estado { get; set; }
         public Huesped Huesped { get; set; }
         public Actividad Actividad { get; set; }
-        public Agenda() { }
+
+
+        public Agenda() { 
+        
+        
+        }
 
         public Agenda(bool estado, Huesped huesped, Actividad actividad)
         {
@@ -22,6 +28,22 @@ namespace Obligatorio1
             Actividad = actividad;
         }
 
-    }
+        // valida la edad y disponibilidad para saber si puede agendarse
+        public static bool Cumple(Actividad act, Huesped hue)
+        {
+            bool ret = false;
 
+            int edad = DateTime.Now.Year - hue.FechaNacimiento.Year;
+
+            if (edad >= act.EdadMinima && act.LugaresDisponibles > 0)
+            {
+                ret = true;
+            }
+
+            return ret;
+        }
+
+
+
+    }
 }

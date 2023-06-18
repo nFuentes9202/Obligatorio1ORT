@@ -29,7 +29,7 @@
                             </li>
 
                             <li class="nav-item">
-                                <a class="nav-link text-light" asp-area="" asp-controller="Huesped" asp-action="Registro">Registrarse</a>
+                                <a class="nav-link text-light" asp-area="" asp-controller="Usuario" asp-action="RegistroHuesped">Registrarse</a>
                             </li>
 
                         }
@@ -39,10 +39,10 @@
                             if (Context.Session.GetString("LogueadoTipo").Equals("Huesped"))
                             {
                                 <li class="nav-item">
-                                    <a class="nav-link text-light" asp-area="" asp-controller="Agenda" asp-action="Agenda">Ver las agendas</a>
+                                    <a class="nav-link text-light" asp-area="" asp-controller="Usuario" asp-action="Agenda">Ver agendas</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link text-light" asp-area="" asp-controller="Huesped" asp-action="Details">Perfil</a>
+                                    <a class="nav-link text-light" asp-area="" asp-controller="Usuario" asp-action="Details">Perfil</a>
                                 </li>
                             }
                             else
@@ -50,7 +50,7 @@
                             {
                                
                                 <li class="nav-item">
-                                    <a class="nav-link text-light" asp-area="" asp-controller="Agenda" asp-action="Index">Ver agendas</a>
+                                    <a class="nav-link text-light" asp-area="" asp-controller="Usuario" asp-action="Agendas">Ver agendas</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link text-light" asp-area="" asp-controller="Proveedor" asp-action="Index">Proveedores</a>
