@@ -26,8 +26,8 @@ namespace WebApp.Controllers
 
 
             }
-
-            return View(s.GetActividades());
+            
+            return View(s.GetActividadesDelDia());
         }
         [HttpPost]
         public IActionResult BuscarActividadPorFecha(DateTime FechaBuscada)

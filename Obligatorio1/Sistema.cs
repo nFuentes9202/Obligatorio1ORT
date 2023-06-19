@@ -61,20 +61,20 @@ namespace Obligatorio1
             Actividad ac3 = new ActividadHostal("Campeonato de Tenis", "Partidos de Tenis singles", DateTime.Now.AddDays(100), 12, 18, 25, 12, "Andres", "Canchas de Tenis", true);
             Actividad ac4 = new ActividadHostal("Campeonato de Futbol 5", "Partidos de futbol 5 por equipo", DateTime.Now.AddDays(5), 30, 18, 75, 30, "Andres", "Canchas de Futbol", true);
             Actividad ac5 = new ActividadHostal("Campeonato de Ajedrez", "Juego de mesa indoor", DateTime.Now.AddDays(54), 8, 5, 0, 8, "Roberto", "Salon de Juegos", false);
-            Actividad ac6 = new ActividadHostal("Campeonato de Pesca", "Actividad Acuatica", DateTime.Now.AddDays(1), 50, 10, 30, 50, "Sebastian", "Lago", true);
+            Actividad ac6 = new ActividadHostal("Campeonato de Pesca", "Actividad Acuatica", DateTime.Now.AddMinutes(10), 50, 10, 30, 50, "Sebastian", "Lago", true);
             Actividad ac7 = new ActividadHostal("Torneo de Golf", "Competencia mixta a 9 hoyos", DateTime.Now.AddDays(2), 35, 21, 100, 35, "Andres", "Campo de Golf", true);
             Actividad ac8 = new ActividadHostal("Torneo de Poker", "Juego de mesa indoor", DateTime.Now.AddDays(45), 25, 18, 0, 25, "Roberto", "Salon de Juegos", false);
             Actividad ac9 = new ActividadHostal("Cabalgata", "Recorriendo el Lago y los Jardines", DateTime.Now.AddDays(23), 10, 15, 10, 10, "Sebastian", "Perimetro Exterior", true);
             Actividad ac10 = new ActividadHostal("Senderismo", "Descubriendo los Alrededores", DateTime.Now.AddDays(15), 24, 10, 0, 24, "Sebastian", "Cerro y Cascadas", true);
             Actividad ac11 = new ActividadTercerizada("Avatar 2", "Cine al aire libre", DateTime.Now.AddDays(5), 50, 1, 10, 50, false, new DateTime(2023, 04, 04), pro1);
             Actividad ac12 = new ActividadTercerizada("Super Mario Bros", "Cine al aire libre", DateTime.Now.AddDays(9), 50, 1, 10, 50, false, new DateTime(2023, 03, 26), pro1);
-            Actividad ac13 = new ActividadTercerizada("Dick Tracy", "Cine al aire libre", DateTime.Now.AddDays(6), 50, 1, 10, 50, false, new DateTime(2023, 05, 28), pro1);
+            Actividad ac13 = new ActividadTercerizada("Dick Tracy", "Cine al aire libre", DateTime.Now.AddMinutes(10), 50, 1, 10, 50, false, new DateTime(2023, 05, 28), pro1);
             Actividad ac14 = new ActividadTercerizada("Salto Bungee", "Salto desde el puente del Rio Negro", DateTime.Now.AddDays(5), 15, 21, 30, 5, true, new DateTime(2023, 04, 19), pro4);
             Actividad ac15 = new ActividadTercerizada("Salto Bungee", "Salto desde el puente del Rio Negro", DateTime.Now.AddDays(5), 15, 21, 30, 15, false, new DateTime(2023, 06, 12), pro4);
             Actividad ac16 = new ActividadTercerizada("Salto Bungee", "Salto desde el puente del Rio Negro", DateTime.Now.AddDays(5), 15, 21, 30, 15, false, new DateTime(2023, 05, 15), pro4);
             Actividad ac17 = new ActividadTercerizada("NTVG", "Concierto", DateTime.Now.AddDays(10), 100, 1, 10, 65, true, new DateTime(2023, 08, 29), pro3);
             Actividad ac18 = new ActividadTercerizada("Once Tiros", "Concierto", DateTime.Now.AddDays(11), 100, 1, 10, 50, false, new DateTime(2023, 07, 19), pro3);
-            Actividad ac19 = new ActividadTercerizada("Sordromo", "Concierto", DateTime.Now.AddDays(14), 100, 1, 10, 50, false, new DateTime(2023, 04, 06), pro3);
+            Actividad ac19 = new ActividadTercerizada("Sordromo", "Concierto", DateTime.Now.AddMinutes(10), 100, 1, 10, 50, false, new DateTime(2023, 04, 06), pro3);
             Actividad ac20 = new ActividadTercerizada("Pica-Pica", "Show musical infantil", DateTime.Now.AddDays(13), 50, 1, 10, 50, false, new DateTime(2023, 04, 09), pro6);
             Actividad ac21 = new ActividadTercerizada("Mago Daniel K", "Show de magia para ninios", DateTime.Now.AddDays(123), 50, 1, 10, 50, false, new DateTime(2023, 05, 26), pro6);
             Actividad ac22 = new ActividadTercerizada("Los Rokilis", "Show musical infantil", DateTime.Now.AddDays(54), 50, 1, 10, 50, true, new DateTime(2023, 06, 15), pro6);
@@ -431,7 +431,20 @@ namespace Obligatorio1
 
         }
 
-        
+        public List<Actividad> GetActividadesDelDia()
+        {
+            List<Actividad> ret = new List<Actividad>();
+            foreach(Actividad act in _actividades)
+            {
+                if (act.Fecha.Date.Equals(DateTime.Now.Date))
+                {
+                    ret.Add(act);
+                }
+            }
+            return ret;
+        }
+
+
 
         #endregion
     }
