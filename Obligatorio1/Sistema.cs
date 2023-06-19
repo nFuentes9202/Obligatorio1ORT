@@ -113,7 +113,7 @@ namespace Obligatorio1
             _actividades[24].Fecha = new DateTime(2023, 6, 12);
 
 
-            Usuario u1 = new Huesped("CI", "78256463", "Roberto", "Bonilla", "325", new DateTime(1964, 10, 27), 2, "rbonilla@mimail.com", "768524121");
+            Usuario u1 = new Huesped("CI", "60242466", "Roberto", "Bonilla", "325", new DateTime(1964, 10, 27), 2, "rbonilla@mimail.com", "768524121");
             AltaUsuario(u1);
             Usuario u2 = new Operador("Jorge", "Marona", new DateTime(2020, 05, 10), "jormarona@gmail.com", "Holahola123");
             Usuario u3 = new Operador("Marcelo", "Marciano", new DateTime(2015, 02, 25), "marciano@gmail.com", "TestTest265");
@@ -151,14 +151,15 @@ namespace Obligatorio1
         {
             try
             {
-                if(usu is Huesped)
+                if(usu is Huesped hue)
                 {
-                    Huesped hues = usu as Huesped;
-                   if(CedulaYaExistente(hues))
+                    
+                    if (CedulaYaExistente(hue))
                     {
                         throw new Exception("Cedula de identidad ya existente");
                     }
                 }
+                
                 usu.EsValido();
                 _usuarios.Add(usu);
             }
@@ -262,18 +263,7 @@ namespace Obligatorio1
             return _proveedores;
         }
         //Metodo para comprobar si la combinación cedula y tipoDocumento es válida. Retorna booleano.
-        private bool CedulaYaExistente(Huesped huesped)
-        {
-            bool ret = false;
-            foreach(Huesped hues in _usuarios)
-            {
-                if(hues.TipoDocumento == "CI" && hues.NumeroDocumento == huesped.NumeroDocumento)
-                {
-                    ret = true;
-                }
-            }
-            return ret;
-        }
+        
         // Busca un usuario existente en sistema. Si no lo encuentra retorna null
         public Usuario Login(string email, string password)
         {
@@ -314,7 +304,19 @@ namespace Obligatorio1
             }
             return null;
         }
-
+        public bool CedulaYaExistente(Huesped huesped)
+        {
+            bool ret = false;
+            foreach (Huesped hues in _usuarios.OfType<Huesped>())
+            {
+                if (hues.TipoDocumento == "CI" && hues.NumeroDocumento == huesped.NumeroDocumento)
+                {
+                    ret = true;
+                    break; // Puedes agregar un break aquí si deseas detener la iteración una vez que encuentres una coincidencia
+                }
+            }
+            return ret;
+        }
         public Actividad GetActividadPorId(int idAct)
         {
 

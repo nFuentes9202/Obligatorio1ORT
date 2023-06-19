@@ -23,8 +23,10 @@ namespace WebApp.Controllers
         [HttpPost]
         public IActionResult RegistroHuesped(Huesped huesped)
         {
+            
             try
             {
+                
                 s.AltaUsuario(huesped);
                 ViewBag.msgRegistro = "Se creo exitosamente su usuario";
 

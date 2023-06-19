@@ -50,16 +50,21 @@ namespace Obligatorio1
             }
             if (String.IsNullOrEmpty(Habitacion))
             {
-                if(TipoDocumento == "CI")
+                throw new Exception("La habitación no puede ser nula");
+            }
+            if (TipoDocumento == "CI")
+            {
+                if (!EsCedulaValida(NumeroDocumento))
                 {
-                    if (!EsCedulaValida(NumeroDocumento))
-                    {
-                        throw new Exception("Cedula no válida");
-                    }
+                    throw new Exception("Cedula no válida");
                 }
+                
+                
             }
 
+
         }
+        
         //Método de validacion de la cédula verificando digito verificador. Verifica que el formato sea válido, y verifica digito.
         private static bool EsCedulaValida(string cedula)
         {
