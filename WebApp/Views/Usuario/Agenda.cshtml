@@ -1,4 +1,4 @@
-﻿<link rel="stylesheet" href="~/css/Agenda/Agenda.css" asp-append-version="true" />
+﻿<link rel="stylesheet" href="~/css/Usuario/Agenda.css" asp-append-version="true" />
 
 @model IEnumerable<Obligatorio1.Agenda>
 
@@ -13,15 +13,33 @@
     {
         <div class="card text-center">
             <div class="card-header">
-                @agenda.Actividad.CostoDolares
+             @agenda.Actividad.Nombre  
             </div>
             <div class="card-body">
-                <h5 class="card-title">@agenda.FechaCreacion</h5>
-                <p class="card-text">@agenda.Actividad.Descripcion</p>
-                <a class="btn btn-outline-secondary" href="@Url.Action("Agendarse","Actividad",new{id=agenda.Actividad.Id})">Agendarse</a>
+                <h5 class="card-title">@agenda.Huesped.Nombre @agenda.Huesped.Apellido</h5>
+                <p class="card-text">@{
+                        DateTime fn = (DateTime)agenda.Actividad.Fecha;
+                    }@fn.ToString("dd/MM/yyyy")</p>
+                <p class="card-text">Aca va el costo</p>
+                @if (agenda.Actividad.GetTipo().Equals("HOSTAL")){
+                    //TODO agenda.Actividad as agenda.ActividadHostal
+                    <p class="card-text">@agenda.Actividad.Descripcion</p>
+                }
+                else
+                {
+                    //TODO agenda.Actividad as agenda.ActividadHostal
+                    <p class="card-text">@agenda.Actividad.</p>
+                }
             </div>
             <div class="card-footer text-muted">
-                @agenda.Actividad.EdadMinima Edad Minima
+                @if(agenda.Estado == true)
+                {
+                    <p style="color:green">Actividad Confirmada</p>
+                }
+                else
+                {
+                    <p style="color:red">Actividad Pendiente de Pago</p>
+                }
             </div>
         </div>
     }
