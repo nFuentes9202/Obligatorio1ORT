@@ -6,7 +6,7 @@ namespace WebApp.Controllers
     public class UsuarioController : Controller
     {
         Sistema s = Sistema.GetInstancia();
-        public IActionResult Registro()
+        public IActionResult RegistroHuesped()
         {
             string? tipoUsuario = HttpContext.Session.GetString("LogueadoTipo");
 
@@ -21,7 +21,7 @@ namespace WebApp.Controllers
 
         }
         [HttpPost]
-        public IActionResult Registro(Huesped huesped)
+        public IActionResult RegistroHuesped(Huesped huesped)
         {
             try
             {

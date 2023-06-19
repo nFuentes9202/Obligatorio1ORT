@@ -120,6 +120,11 @@ namespace Obligatorio1
             AltaUsuario(u2);
             AltaUsuario(u3);
 
+            Agenda ag1 = new Agenda(false, u1 as Huesped, ac1);
+            Agenda ag2 = new Agenda(false, u1 as Huesped, ac2);
+            Agenda ag3 = new Agenda(false, u1 as Huesped, ac3);
+            Agenda ag4 = new Agenda(false, u1 as Huesped, ac4);
+            Agenda ag5 = new Agenda(false, u1 as Huesped, ac5);
         }
         #endregion
 

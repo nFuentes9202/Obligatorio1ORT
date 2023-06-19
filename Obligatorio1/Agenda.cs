@@ -15,8 +15,8 @@ namespace Obligatorio1
         public Actividad Actividad { get; set; }
 
 
-        public Agenda() { 
-        
+        public Agenda() {
+            Estado = false;
         
         }
 
@@ -42,7 +42,7 @@ namespace Obligatorio1
 
             return ret;
         }
-
+        
 
 
     }
