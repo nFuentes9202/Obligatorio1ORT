@@ -53,7 +53,28 @@ namespace WebApp.Controllers
             
             
         }
+        [HttpPost]
+        public IActionResult BuscarAgendaPorFecha(DateTime FechaBuscada)
+        {
+            if (FechaBuscada == DateTime.MinValue)
+            {
+                return View("Agenda", s.GetAgendasDelDia());
+            }
+            List<Agenda> buscadas = new List<Agenda>();
+            buscadas = s.getAgendasSegunFecha(FechaBuscada);
+            return View("Agenda", buscadas);
 
+        }
+        [HttpPost]
+        public IActionResult BuscarAgendasPorDocumento(string ?tipoDocumento, string? nroDocumento)
+        {
+            if (tipoDocumento == null || tipoDocumento.Equals("-1") )
+            {
+                return View("Agenda",s.GetAgendas());
+            }
+
+            return View("Agenda", s.GetAgendasPorDocumento(tipoDocumento, nroDocumento));
+        }
         public IActionResult Agenda()
         {
             string? tipoUsuario = HttpContext.Session.GetString("LogueadoTipo");
@@ -64,7 +85,7 @@ namespace WebApp.Controllers
             }
             if (tipoUsuario.Equals("Operador"))
             {
-                return View(s.GetAgendasDelDia());
+                return View(s.GetAgendas());
             }
             else
             {
@@ -74,7 +95,7 @@ namespace WebApp.Controllers
         public IActionResult ConfirmarAgenda(int id)
         {
             s.ConfirmarAgenda(id);
-            return View("Agenda",s.GetAgendasDelDia());
+            return View("Agenda",s.GetAgendas());
 
         }
 

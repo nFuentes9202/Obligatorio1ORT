@@ -10,7 +10,36 @@
 @if(Model != null)
 {
     
+@if(Context.Session.GetString("LogueadoTipo").Equals("Operador")){
+        <div class="form-control">
+            <div class="form-text-center">
+                <form method="post" asp-action="BuscarAgendaPorFecha">
+                    <label for="strFecha">Buscar actividad por fecha</label>
+                    <input type="date" id="strFecha" name="FechaBuscada" class="form-control p-2" />
+                    <input type="submit" value="Buscar" class="btn-primary" />
+                </form>
+            </div>
+        </div>
 
+        <div class="form-control">
+            <div class="form-text-center">
+                <form method="post" asp-action="BuscarAgendasPorDocumento">
+                    <label for="slcTipoDocumento">Seleccione su tipo de documento</label><br>
+                    <select id="slcTipoDocumento" name="tipoDocumento">
+                        <option value="-1"selected disabled>Seleccione un tipo de documento</option>
+                        <option value="CI">CI</option>
+                        <option value="Pasaporte">Pasaporte</option>
+                        <option value="Otro">Otro</option>
+                    </select>
+                    <br>
+                    <label for="strNumero">Buscar actividad por Documento</label><br>
+                    <input type="number" id="strNumero" name="nroDocumento" class="form-control p-2" />
+                    <input type="submit" value="Buscar" class="btn-primary" />
+                </form>
+            </div>
+        </div>
+        
+}
 <div class="tarjetas">
     @foreach (var agenda in Model)
     {

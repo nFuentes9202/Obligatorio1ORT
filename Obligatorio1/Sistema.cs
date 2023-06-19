@@ -496,6 +496,32 @@ namespace Obligatorio1
             }
         }
 
+        public List<Agenda> getAgendasSegunFecha(DateTime fechaBuscada)
+        {
+            List<Agenda> ret = new List<Agenda>();
+            foreach (Agenda ag in _agendas)
+            {
+                if (ag.Actividad.Fecha.Date.Equals(fechaBuscada.Date))
+                {
+                    ret.Add(ag);
+                }
+            }
+            return ret;
+        }
+
+        public List<Agenda> GetAgendasPorDocumento(string? tipoDocumento, string? nroDocumento)
+        {
+            List<Agenda> ret = new List<Agenda>();
+            foreach(Agenda ag in _agendas)
+            {
+                if(ag.Huesped.TipoDocumento.Equals(tipoDocumento) && ag.Huesped.NumeroDocumento.Equals(nroDocumento))
+                {
+                    ret.Add(ag);
+                }
+            }
+            return ret;
+        }
+
 
 
         #endregion

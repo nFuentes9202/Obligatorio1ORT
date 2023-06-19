@@ -41,6 +41,7 @@ namespace WebApp.Controllers
             return View("Index",buscadas);
 
         }
+       
         public IActionResult Login()
         {
             return View();
