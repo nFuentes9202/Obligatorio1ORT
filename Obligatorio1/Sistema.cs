@@ -389,7 +389,7 @@ namespace Obligatorio1
             {
                 ret = true;
             }
-            if(act.Fecha < DateTime.Now)
+            if(act.Fecha.Date < DateTime.Now.Date)
             {
                 ret = false;
             }
