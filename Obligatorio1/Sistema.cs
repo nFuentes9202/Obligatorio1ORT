@@ -125,11 +125,14 @@ namespace Obligatorio1
             Agenda ag3 = new Agenda(false, u1 as Huesped, ac3);
             Agenda ag4 = new Agenda(false, u1 as Huesped, ac4);
             Agenda ag5 = new Agenda(false, u1 as Huesped, ac5);
+            Agenda ag24 = new Agenda(false, u1 as Huesped, ac24);
             AltaAgenda(ag1);
             AltaAgenda(ag2);
             AltaAgenda(ag3);
             AltaAgenda(ag4);
             AltaAgenda(ag5);
+            AltaAgenda(ag24);
+            
 
         }
         #endregion

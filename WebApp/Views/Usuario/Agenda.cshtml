@@ -24,14 +24,15 @@
                         DateTime fn = (DateTime)agenda.Actividad.Fecha;
                     }@fn.ToString("dd/MM/yyyy")</p>
                 <p class="card-text">Aca va el costo</p>
-                @if (agenda.Actividad.GetTipo().Equals("HOSTAL")){
-                    //TODO agenda.Actividad as agenda.ActividadHostal
-                    <p class="card-text">@agenda.Actividad.Descripcion</p>
-                }
-                else
-                {
-                    //TODO agenda.Actividad as agenda.ActividadHostal
-                    <p class="card-text">@agenda.Actividad.</p>
+                @if (agenda.Actividad is Obligatorio1.ActividadHostal){
+                        Obligatorio1.ActividadHostal acthostal = agenda.Actividad as Obligatorio1.ActividadHostal;
+                        
+                        <p class="card-text">Lugar: @acthostal.Lugar</p>
+                    }
+                    else
+                    {
+                        Obligatorio1.ActividadTercerizada actterc = agenda.Actividad as Obligatorio1.ActividadTercerizada;
+                        <p class="card-text">Proveedor: @actterc.Proveedor.NombreUnico</p>
                 }
             </div>
             <div class="card-footer text-muted">
