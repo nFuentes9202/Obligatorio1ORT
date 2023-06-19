@@ -56,7 +56,7 @@ namespace Obligatorio1
             AltaProveedor(pro10);
 
 
-            Actividad ac1 = new ActividadHostal("Campeonato de Pool", "Juego de mesa indoor", DateTime.Now.AddDays(65), 20, 18, 15, 20, "Roberto", "Salon de Juegos", false);
+            Actividad ac1 = new ActividadHostal("Campeonato de Pool", "Juego de mesa indoor", DateTime.Now.AddMinutes(10), 20, 18, 15, 20, "Roberto", "Salon de Juegos", false);
             Actividad ac2 = new ActividadHostal("Campeonato de Ping Pong", "Juego de mesa indoor", DateTime.Now.AddDays(32), 26, 15, 10, 26, "Roberto", "Salon de Juegos", false);
             Actividad ac3 = new ActividadHostal("Campeonato de Tenis", "Partidos de Tenis singles", DateTime.Now.AddDays(100), 12, 18, 25, 12, "Andres", "Canchas de Tenis", true);
             Actividad ac4 = new ActividadHostal("Campeonato de Futbol 5", "Partidos de futbol 5 por equipo", DateTime.Now.AddDays(5), 30, 18, 75, 30, "Andres", "Canchas de Futbol", true);
@@ -457,6 +457,43 @@ namespace Obligatorio1
                 }
             }
             return null;
+        }
+
+        public List<Agenda> GetAgendasDelDia()
+        {
+            List<Agenda> ret = new List<Agenda>();
+            foreach(Agenda ag in _agendas)
+            {
+                if(ag.Actividad.Fecha.Date.Equals(DateTime.Now.Date))
+                {
+                    ret.Add(ag);
+                }
+            }
+            return ret;
+        }
+
+        public List<Agenda> GetAgendas(int? idUsuario)
+        {
+            List<Agenda> ret = new List<Agenda>();
+            foreach(Agenda ag in _agendas)
+            {
+                if (ag.Huesped.Id.Equals(idUsuario) && ag.Actividad.Fecha >= DateTime.Now.Date)
+                {
+                    ret.Add(ag);
+                }
+            }
+            return ret;
+        }
+
+        public void ConfirmarAgenda(int id)
+        {
+            foreach(Agenda ag in _agendas)
+            {
+                if (ag.Id.Equals(id))
+                {
+                    ag.Estado = true;
+                }
+            }
         }
 
 

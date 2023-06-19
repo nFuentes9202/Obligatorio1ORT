@@ -56,7 +56,26 @@ namespace WebApp.Controllers
 
         public IActionResult Agenda()
         {
-            return View(s.GetAgendas());
+            string? tipoUsuario = HttpContext.Session.GetString("LogueadoTipo");
+            int? idUsuario = HttpContext.Session.GetInt32("LogueadoId");
+            if(tipoUsuario == null)
+            {
+               return RedirectToAction("Index", "Home");
+            }
+            if (tipoUsuario.Equals("Operador"))
+            {
+                return View(s.GetAgendasDelDia());
+            }
+            else
+            {
+               return View(s.GetAgendas(idUsuario));
+            }
+        }
+        public IActionResult ConfirmarAgenda(int id)
+        {
+            s.ConfirmarAgenda(id);
+            return View("Agenda",s.GetAgendasDelDia());
+
         }
 
     }

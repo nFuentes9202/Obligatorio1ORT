@@ -43,6 +43,9 @@
                 else
                 {
                     <p style="color:red">Actividad Pendiente de Pago</p>
+                        @if(Context.Session.GetString("LogueadoTipo").Equals("Operador")){
+                            <a href="@Url.Action("ConfirmarAgenda", "Usuario", new { id = @agenda.Id })">Confirmar</a>
+                        }
                 }
             </div>
         </div>

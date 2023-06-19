@@ -9,6 +9,8 @@ namespace Obligatorio1
 {
     public class Agenda
     {
+        public static int UltimoId { get; set; } = 1;
+        public int Id { get; set; }
         public DateTime FechaCreacion { get; set; }
         public bool Estado { get; set; }
         public Huesped Huesped { get; set; }
@@ -17,11 +19,14 @@ namespace Obligatorio1
 
         public Agenda() {
             Estado = false;
-        
+            Id = UltimoId;
+            UltimoId++;
         }
 
         public Agenda(bool estado, Huesped huesped, Actividad actividad)
         {
+            Id = UltimoId;
+            UltimoId++;
             FechaCreacion = DateTime.Now;
             Estado = estado;
             Huesped = huesped;
