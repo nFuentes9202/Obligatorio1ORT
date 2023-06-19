@@ -7,6 +7,9 @@
 </div>
 
 
+@if(Model != null)
+{
+    
 
 <div class="tarjetas">
     @foreach (var agenda in Model)
@@ -45,3 +48,8 @@
     }
 
 </div>
+
+}
+else{
+    <h5>No cuenta con Actividades agendadas</h5>
+}
