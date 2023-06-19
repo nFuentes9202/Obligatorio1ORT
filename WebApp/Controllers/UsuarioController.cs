@@ -40,7 +40,18 @@ namespace WebApp.Controllers
 
         public IActionResult Details()
         {
-            return View(s.GetHuesped());
+            string? tipoUsuario = HttpContext.Session.GetString("LogueadoTipo");
+            int? idUsuario = HttpContext.Session.GetInt32("LogueadoId");
+
+            if(tipoUsuario == null)
+            {
+                return RedirectToAction("Index", "Home");
+            }
+            else{
+                return View(s.GetUsuarioPorId(idUsuario));
+            }
+            
+            
         }
 
         public IActionResult Agenda()

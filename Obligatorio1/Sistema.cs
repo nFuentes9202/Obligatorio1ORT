@@ -444,6 +444,18 @@ namespace Obligatorio1
             return ret;
         }
 
+        public Usuario GetUsuarioPorId(int? id)
+        {
+            foreach (Usuario usu in _usuarios)
+            {
+                if (usu.Id.Equals(id))
+                {
+                    return usu;
+                }
+            }
+            return null;
+        }
+
 
 
         #endregion

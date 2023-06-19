@@ -1,7 +1,7 @@
 ﻿
-@model IEnumerable<Obligatorio1.Huesped>
+@model Obligatorio1.Usuario
 
-<h3>Perfil de Huesped</h3>
+<h3>Perfil del Usuario</h3>
 
 
 
@@ -9,58 +9,83 @@
     <thead>
         <tr>
             <th>
-               ID
+                Email
             </th>
-            <th>
-               Nombre
-            </th>
-            <th>
-               Apellido
-            </th>
-            <th>
-               Email
-            </th>
-            <th>
-               Fecha de nacimiento
-            </th>
-            <th>
-               Contrasenia
-            </th>
-            <th></th>
+            @if(Model is Obligatorio1.Huesped)
+            {
+                <th>
+                    Tipo de Documento
+                </th>
+                <th>
+                    Número de documento
+                </th>
+                <th>
+                    Nombre
+                </th>
+                <th>
+                    Habitación
+                </th>
+                <th>
+                    Fecha de nacimiento
+                </th>
+                <th>
+                    Nivel de fidelización
+                </th>
+            }
+            @if (Model is Obligatorio1.Operador)
+            {
+                <th>
+                    Nombre
+                </th>
+                <th>
+                    Fecha de ingreso
+                </th>
+            }
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
         <tr>
-          
-            <td>
-                    @item.Id
-            </td>
-            <td>
-                    @item.Nombre
-            </td>
-            <td>
-                    @item.Apellido
-            </td>
-            <td>
-                    @item.Email
-            </td>
-            <td>
+          <td>
+              @Model.Email
+          </td>
+            @if (Model is Obligatorio1.Huesped)
+            {
+                Obligatorio1.Huesped hues = Model as Obligatorio1.Huesped;
+                <td>
+                    @hues.TipoDocumento
+                </td>
+                <td>
+                    @hues.NumeroDocumento
+                </td>
+                <td>
+                    @hues.Nombre @hues.Apellido
+                </td>
+                <td>
+                    @hues.Habitacion
+                </td>
+                <td>
                     @{
-                        DateTime fn = (DateTime)item.FechaNacimiento;
+                        DateTime fn = (DateTime)hues.FechaNacimiento;
                     }
                     @fn.ToString("dd/MM/yyyy")
-
-            </td>
-            <td>
-                    @item.Contrasenia
-            </td>
-            <td>
-                    @Html.ActionLink("Editar", "Edit", new {  id=item.Id }) |
-
-
-            </td>
+                </td>
+                <td>
+                    @hues.NivelFidelizacion
+                </td>
+            }
+            @if (Model is Obligatorio1.Operador)
+            {
+                Obligatorio1.Operador oper = Model as Obligatorio1.Operador;
+                <td>
+                    @oper.Nombre @oper.Apellido
+                </td>
+                <td>
+                    @{
+                        DateTime fn = (DateTime)oper.FechaEmpezoTrabajar;
+                    }
+                    @fn.ToString("dd/MM/yyyy")
+                </td>
+            }
         </tr>
-}
     </tbody>
 </table>
