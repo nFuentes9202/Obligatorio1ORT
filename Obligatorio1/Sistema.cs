@@ -125,6 +125,12 @@ namespace Obligatorio1
             Agenda ag3 = new Agenda(false, u1 as Huesped, ac3);
             Agenda ag4 = new Agenda(false, u1 as Huesped, ac4);
             Agenda ag5 = new Agenda(false, u1 as Huesped, ac5);
+            AltaAgenda(ag1);
+            AltaAgenda(ag2);
+            AltaAgenda(ag3);
+            AltaAgenda(ag4);
+            AltaAgenda(ag5);
+
         }
         #endregion
 
@@ -144,7 +150,8 @@ namespace Obligatorio1
             {
                 if(usu is Huesped)
                 {
-                   if(CedulaYaExistente(usu as Huesped))
+                    Huesped hues = usu as Huesped;
+                   if(CedulaYaExistente(hues))
                     {
                         throw new Exception("Cedula de identidad ya existente");
                     }
@@ -183,6 +190,11 @@ namespace Obligatorio1
 
                 throw e;
             }
+        }
+
+        public void AltaAgenda(Agenda agenda)
+        {
+            _agendas.Add(agenda);
         }
 
 
@@ -361,6 +373,7 @@ namespace Obligatorio1
         }
 
         // valida la edad y disponibilidad para saber si puede agendarse
+        //TODO Refactorizar en un EsValido con excepciones
         public static bool Cumple(Actividad act, Huesped hue)
         {
             bool ret = false;
@@ -371,7 +384,10 @@ namespace Obligatorio1
             {
                 ret = true;
             }
-
+            if(act.Fecha < DateTime.Now)
+            {
+                ret = false;
+            }
             return ret;
         }
 
@@ -380,9 +396,9 @@ namespace Obligatorio1
         {
             bool ret = false;
 
-            foreach (Agenda age in _agendas)
+            foreach(Agenda age in _agendas)
             {
-                if (age.Actividad.Equals(act) || age.Huesped.Equals(hues))
+                if(age.Actividad.Equals(act) && age.Huesped.Equals(hues))
                 {
                     ret = true;
                 }
@@ -395,17 +411,27 @@ namespace Obligatorio1
             Usuario hues = GetHuespedPorId(idHuesped);
             Actividad act = GetActividadPorId(IdActividad);
 
-            if(act != null && !UsuarioYaAgendado(act, hues as Huesped) && Cumple(act, hues as Huesped))
+            if(act == null)
             {
-                Agenda nueva = new Agenda(false, hues as Huesped, act);
+                throw new Exception("Actividad nula");
             }
-            else
+            if(UsuarioYaAgendado(act, hues as Huesped))
             {
-                throw new Exception("No se puede agendar");
+                throw new Exception("Ya estás agendado a esta actividad");
             }
+            if(!Cumple(act, hues as Huesped))
+            {
+                throw new Exception("No cumplís con los requisitos para agendarte");
+            }
+            Agenda nueva = new Agenda(false, hues as Huesped, act);
+
+            act.LugaresDisponibles--;
+            AltaAgenda(nueva);
 
 
         }
+
+        
 
         #endregion
     }
