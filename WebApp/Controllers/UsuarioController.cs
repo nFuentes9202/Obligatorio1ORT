@@ -58,9 +58,12 @@ namespace WebApp.Controllers
         [HttpPost]
         public IActionResult BuscarAgendaPorFecha(DateTime FechaBuscada)
         {
+            List<Agenda> agendasOrdenadas = new List<Agenda>();
             if (FechaBuscada == DateTime.MinValue)
             {
-                return View("Agenda", s.GetAgendasDelDia());
+                agendasOrdenadas = s.GetAgendasDelDia();
+                agendasOrdenadas.Sort();
+                return View("Agenda", agendasOrdenadas);
             }
             List<Agenda> buscadas = new List<Agenda>();
             buscadas = s.getAgendasSegunFecha(FechaBuscada);
@@ -70,12 +73,16 @@ namespace WebApp.Controllers
         [HttpPost]
         public IActionResult BuscarAgendasPorDocumento(string ?tipoDocumento, string? nroDocumento)
         {
+            List<Agenda> agendasOrdenadas = new List<Agenda>();
             if (tipoDocumento == null || tipoDocumento.Equals("-1") )
             {
-                return View("Agenda",s.GetAgendas());
+                agendasOrdenadas = s.GetAgendas();
+                agendasOrdenadas.Sort();
+                return View("Agenda",agendasOrdenadas);
             }
-
-            return View("Agenda", s.GetAgendasPorDocumento(tipoDocumento, nroDocumento));
+            agendasOrdenadas = s.GetAgendasPorDocumento(tipoDocumento, nroDocumento);
+            agendasOrdenadas.Sort();
+            return View("Agenda", agendasOrdenadas);
         }
         public IActionResult Agenda()
         {
@@ -87,11 +94,15 @@ namespace WebApp.Controllers
             }
             if (tipoUsuario.Equals("Operador"))
             {
-                return View(s.GetAgendas());
+                List<Agenda> agendasOrdenadas = s.GetAgendas();
+                agendasOrdenadas.Sort();
+                return View(agendasOrdenadas);
             }
             else
             {
-               return View(s.GetAgendas(idUsuario));
+                List<Agenda> agendasOrdenadas = s.GetAgendas(idUsuario);
+                agendasOrdenadas.Sort();
+                return View(agendasOrdenadas);
             }
         }
         public IActionResult ConfirmarAgenda(int id)

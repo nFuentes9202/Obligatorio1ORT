@@ -32,12 +32,16 @@ namespace WebApp.Controllers
         [HttpPost]
         public IActionResult BuscarActividadPorFecha(DateTime FechaBuscada)
         {
+            List<Actividad> actividadesOrdenadas = new List<Actividad>();
             if(FechaBuscada ==  DateTime.MinValue)
             {
-                return View("Index",s.GetActividades());
+                actividadesOrdenadas = s.GetActividades();
+                actividadesOrdenadas.Sort();
+                return View("Index",actividadesOrdenadas);
             }
             List<Actividad> buscadas = new List<Actividad>();
             buscadas = s.getActividadesSegunFecha(FechaBuscada);
+            buscadas.Sort();
             return View("Index",buscadas);
 
         }
