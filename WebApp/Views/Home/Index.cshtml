@@ -30,7 +30,9 @@
             @actividad.Nombre
         </div>
         <div class="card-body">
-            <h5 class="card-title">@actividad.Fecha</h5>
+                <h5 class="card-title">@{
+                        DateTime fn = (DateTime)actividad.Fecha;
+                    }@fn.ToString("dd/MM/yyyy")</h5>
             <p class="card-text">@actividad.Descripcion</p>
                 <a class="btn btn-outline-secondary" href="@Url.Action("Agendar","Agenda",new{id=actividad.Id})">Agendarse</a>
         </div>
