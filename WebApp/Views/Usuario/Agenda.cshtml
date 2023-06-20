@@ -67,6 +67,10 @@
                             {
                                 <p class="card-text"> La actividad es Gratuita! </p>
                             }
+                            else if (agenda.PrecioFinal == -1)
+                            {
+                                <p class="card-text">Actividad a confirmar por el Proveedor</p>
+                            }
                             else
                             {
                                 <p class="card-text"> El costo de la actividad es : $@agenda.PrecioFinal</p>

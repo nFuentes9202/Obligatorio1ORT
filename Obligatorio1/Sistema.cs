@@ -574,6 +574,11 @@ namespace Obligatorio1
                 {
                     precioFinal = act.CostoDolares * actividadTercerizada.Proveedor.Descuento;
                 }
+                else
+                {
+                    precioFinal = -1;
+                }
+
             }
 
             return precioFinal;
