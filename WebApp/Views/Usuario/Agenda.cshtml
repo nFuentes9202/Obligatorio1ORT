@@ -3,93 +3,109 @@
 @model IEnumerable<Obligatorio1.Agenda>
 
 <div class="text-center">
-    <h4 class="display-4">Agenda</h4>
+    <h4 class="display-4 mb-5">Agenda</h4>
 </div>
 
+<div class="container-fluid">
 
-@if(Model != null)
-{
-    
-@if(Context.Session.GetString("LogueadoTipo").Equals("Operador")){
-        <div class="form-control">
-            <div class="form-text-center">
-                <form method="post" asp-action="BuscarAgendaPorFecha">
-                    <label for="strFecha">Buscar actividad por fecha</label>
-                    <input type="date" id="strFecha" name="FechaBuscada" class="form-control p-2" />
-                    <input type="submit" value="Buscar" class="btn-primary" />
-                </form>
-            </div>
-        </div>
-
-        <div class="form-control">
-            <div class="form-text-center">
-                <form method="post" asp-action="BuscarAgendasPorDocumento">
-                    <label for="slcTipoDocumento">Seleccione su tipo de documento</label><br>
-                    <select id="slcTipoDocumento" name="tipoDocumento">
-                        <option value="-1"selected disabled>Seleccione un tipo de documento</option>
-                        <option value="CI">CI</option>
-                        <option value="Pasaporte">Pasaporte</option>
-                        <option value="Otro">Otro</option>
-                    </select>
-                    <br>
-                    <label for="strNumero">Buscar actividad por Documento</label><br>
-                    <input type="number" id="strNumero" name="nroDocumento" class="form-control p-2" />
-                    <input type="submit" value="Buscar" class="btn-primary" />
-                </form>
-            </div>
-        </div>
-        
-}
-<div class="tarjetas">
-    @foreach (var agenda in Model)
+    @if (Model != null)
     {
-        <div class="card text-center">
-            <div class="card-header">
-             @agenda.Actividad.Nombre  
-            </div>
-            <div class="card-body">
-                <h5 class="card-title">@agenda.Huesped.Nombre @agenda.Huesped.Apellido</h5>
-                <p class="card-text">@{
-                        DateTime fn = (DateTime)agenda.Actividad.Fecha;
-                    }@fn.ToString("dd/MM/yyyy")</p>
-                    @if(agenda.PrecioFinal == 0)
-                    {
-                        <p class="card-text"> La actividad es Gratuita! </p>
-                    }
-                    else
-                    {
-                        <p class="card-text"> El costo de la actividad es : $@agenda.PrecioFinal</p>
-                    }
-                @if (agenda.Actividad is Obligatorio1.ActividadHostal){
-                        Obligatorio1.ActividadHostal acthostal = agenda.Actividad as Obligatorio1.ActividadHostal;
-                        
-                        <p class="card-text">Lugar: @acthostal.Lugar</p>
-                    }
-                    else
-                    {
-                        Obligatorio1.ActividadTercerizada actterc = agenda.Actividad as Obligatorio1.ActividadTercerizada;
-                        <p class="card-text">Proveedor: @actterc.Proveedor.NombreUnico</p>
-                }
-            </div>
-            <div class="card-footer text-muted">
-                @if(agenda.Estado == true)
+
+        @if (Context.Session.GetString("LogueadoTipo").Equals("Operador"))
+        {
+
+            <section class="row justify-content-center">
+                <div class="col-4 border border-dark">
+                    <div class="form-text-center">
+                        <form method="post" asp-action="BuscarAgendaPorFecha">
+                            <label for="strFecha">Buscar actividad por fecha</label>
+                            <input type="date" id="strFecha" name="FechaBuscada" class="form-control p-2" />
+                            <input type="submit" value="Buscar" class="btn-primary" />
+                        </form>
+                    </div>
+                </div>
+
+                <div class="col-4">
+                    <div class="form-text-center">
+                        <form method="post" asp-action="BuscarAgendasPorDocumento">
+                            <label for="strNumero">Buscar actividad por Documento</label><br>
+                            @*<label for="slcTipoDocumento">Seleccione su tipo de documento</label>*@
+                            <select id="slcTipoDocumento" name="tipoDocumento">
+                                <option value="-1" selected disabled>Seleccione un tipo de documento</option>
+                                <option value="CI">CI</option>
+                                <option value="Pasaporte">Pasaporte</option>
+                                <option value="Otro">Otro</option>
+                            </select>
+                            <input type="number" id="strNumero" name="nroDocumento" placeholder="Sin puntos ni guiones" class="form-control p-2" />
+                            <input type="submit" value="Buscar" class="btn-primary" />
+                        </form>
+                    </div>
+                </div>
+            </section>
+
+
+        }
+
+
+        <section class="row justify-content-center mt-5">
+            <div class="tarjetas col-12">
+
+                @foreach (var agenda in Model)
                 {
-                    <p style="color:green">Actividad Confirmada</p>
-                }
-                else
-                {
-                    <p style="color:red">Actividad Pendiente de Pago</p>
-                        @if(Context.Session.GetString("LogueadoTipo").Equals("Operador")){
-                            <a href="@Url.Action("ConfirmarAgenda", "Usuario", new { id = @agenda.Id })">Confirmar</a>
-                        }
+                    <div class="card text-center">
+                        <div class="card-header">
+                            @agenda.Actividad.Nombre
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">@agenda.Huesped.Nombre @agenda.Huesped.Apellido</h5>
+                            <p class="card-text">
+                                @{
+                                    DateTime fn = (DateTime)agenda.Actividad.Fecha;
+                                }@fn.ToString("dd/MM/yyyy")
+                            </p>
+                            @if (agenda.PrecioFinal == 0)
+                            {
+                                <p class="card-text"> La actividad es Gratuita! </p>
+                            }
+                            else
+                            {
+                                <p class="card-text"> El costo de la actividad es : $@agenda.PrecioFinal</p>
+                            }
+                            @if (agenda.Actividad is Obligatorio1.ActividadHostal)
+                            {
+                                Obligatorio1.ActividadHostal acthostal = agenda.Actividad as Obligatorio1.ActividadHostal;
+
+                                <p class="card-text">Lugar: @acthostal.Lugar</p>
+                            }
+                            else
+                            {
+                                Obligatorio1.ActividadTercerizada actterc = agenda.Actividad as Obligatorio1.ActividadTercerizada;
+                                <p class="card-text">Proveedor: @actterc.Proveedor.NombreUnico</p>
+                            }
+                        </div>
+                        <div class="card-footer text-muted">
+                            @if (agenda.Estado == true)
+                            {
+                                <p style="color:green">Actividad Confirmada</p>
+                            }
+                            else
+                            {
+                                <p style="color:red">Actividad Pendiente de Pago</p>
+                                @if (Context.Session.GetString("LogueadoTipo").Equals("Operador"))
+                                {
+                                    <a href="@Url.Action("ConfirmarAgenda", "Usuario", new { id = @agenda.Id })">Confirmar</a>
+                                }
+                            }
+                        </div>
+                    </div>
                 }
             </div>
-        </div>
+        </section>
+
+    }
+    else
+    {
+        <h5>No cuenta con Actividades agendadas</h5>
     }
 
 </div>
-
-}
-else{
-    <h5>No cuenta con Actividades agendadas</h5>
-}

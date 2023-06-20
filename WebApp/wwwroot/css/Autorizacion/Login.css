@@ -19,8 +19,13 @@
         border-top-right-radius: 0;
     }
 
+.cosas{
+    height: 800px;
+}
+
 main {
     background-color: oldlace;
+
 }
 
 html {

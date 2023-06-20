@@ -7,9 +7,6 @@ main {
     background-color: oldlace;
 }
 
-body{
-    justify-content:center
-}
 
 
 .card{
@@ -18,11 +15,6 @@ body{
     margin: 10px;
 }
 
-.tarjetas {
-    justify-content: center;
-}
-
 .form-control {
-    width: 25rem;
     margin-top: 10px:
 }

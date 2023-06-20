@@ -449,6 +449,7 @@ namespace Obligatorio1
                     ret.Add(act);
                 }
             }
+            ret.Sort();
             return ret;
         }
 

@@ -4,42 +4,53 @@
 
 <h5>@ViewBag.Agendado</h5>
 
-<div class="text-center">
-    <h1 class="display-4">Bienvenido a Hosta<span style="color:red">l</span>ia</h1>
-    <p>La manera mas facil de planificar sus vacaciones.</a>.</p>
+<div class="container-fluid">
+
+        <section class="row justify-content-center">
+        <div class="text-center">
+            <h1 class="display-4">Bienvenido a Hosta<span style="color:red">l</span>ia</h1>
+            <p>La manera mas facil de planificar sus vacaciones.</a>.</p>
+        </div>
+     </section>
+
+
+    <section class="p-5 row justify-content-center">
+        <div class="text-center">
+            <h4 class="display-6">Actividades Disponibles</h4>
+        </div>
+       <div class="form-group col-3">
+           <form method="post" asp-action="BuscarActividadPorFecha">
+                 <label for="strFecha">Buscar actividad por fecha</label>
+                 <input type="date" id="strFecha" name="FechaBuscada" class="form-control" asp-action="BuscarActividad" />
+                 <input type="submit" value="Buscar" class="btn-primary mt-2"/>
+           </form>
+       </div>
+    </section>
+
+
+    <section class="row justify-content-center">
+            
+               @foreach(var actividad in Model)
+                {
+                  <div class="card text-center">
+                     <div class="card-header">
+                       @actividad.Nombre
+                     </div>
+                  <div class="card-body">
+                        <h5 class="card-title">@{DateTime fn = (DateTime)actividad.Fecha;}@fn.ToString("dd/MM/yyyy")</h5>
+                        <p class="card-text">@actividad.Descripcion</p>
+                         <a class="btn btn-outline-secondary" href="@Url.Action("Agendar","Agenda",new{id=actividad.Id})">Agendarse</a>
+                  </div>
+                    <div class="card-footer text-muted">
+                     @actividad.LugaresDisponibles Lugares Disponibles
+                    </div>
+                   </div>
+                }
+
+            
+     </section>
+
+
 </div>
 
-<div class="text-center">
-    <h2 class="display-6">Actividades Disponibles</h2>
-</div>
-<div class="form-control">
-    <div class="form-text-center">
-    <form method="post" asp-action="BuscarActividadPorFecha">
-    <label for="strFecha">Buscar actividad por fecha</label>
-    <input type="date" id="strFecha" name="FechaBuscada" class="form-control p-2" asp-action="BuscarActividad"/>
-    <input type="submit" value="Buscar" class="btn-primary"/>
-</form>
-</div>
-</div>
 
-<div class="tarjetas">
-@foreach(var actividad in Model)
-{
-    <div class="card text-center">
-        <div class="card-header">
-            @actividad.Nombre
-        </div>
-        <div class="card-body">
-                <h5 class="card-title">@{
-                        DateTime fn = (DateTime)actividad.Fecha;
-                    }@fn.ToString("dd/MM/yyyy")</h5>
-            <p class="card-text">@actividad.Descripcion</p>
-                <a class="btn btn-outline-secondary" href="@Url.Action("Agendar","Agenda",new{id=actividad.Id})">Agendarse</a>
-        </div>
-        <div class="card-footer text-muted">
-            @actividad.LugaresDisponibles Lugares Disponibles
-        </div>
-        </div>
-}
-
-</div>

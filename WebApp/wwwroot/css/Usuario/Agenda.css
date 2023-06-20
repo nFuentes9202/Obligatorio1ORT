@@ -8,11 +8,8 @@ main {
 
 
 .card {
-    width: 18.5rem;
+    width: 17rem;
     display: inline-block;
     margin: 10px;
 }
 
-.tarjetas {
-    justify-content: center;
-}
