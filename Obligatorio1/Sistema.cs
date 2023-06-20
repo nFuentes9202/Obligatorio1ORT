@@ -4,6 +4,7 @@ using System.Linq;
 using System.Security;
 using System.Text;
 using System.Threading.Tasks;
+using System.Threading.Tasks.Dataflow;
 
 namespace Obligatorio1
 {
@@ -428,10 +429,12 @@ namespace Obligatorio1
             {
                 throw new Exception("No cumplís con los requisitos para agendarte");
             }
+            double precio = FijarPrecioFinal(hues as Huesped, act);
             Agenda nueva = new Agenda(false, hues as Huesped, act);
-
+            nueva.PrecioFinal = precio;
             act.LugaresDisponibles--;
             AltaAgenda(nueva);
+           
 
 
         }
@@ -525,6 +528,55 @@ namespace Obligatorio1
         }
 
 
+        
+
+
+        public double NiveldeFidelidad(double costo, int nivel)
+        {
+            {
+                double precioFinal = 0;
+                switch (nivel)
+                {
+                    case 1:
+                        precioFinal = costo;
+                        break;
+                    case 2:
+                        precioFinal = (costo * 0.9);
+                        break;
+                    case 3:
+                        precioFinal = (costo * 0.85);
+                        break;
+                    case 4:
+                        precioFinal = (costo * 0.8);
+                        break;
+                    default:
+                        Console.WriteLine("Nivel no válido. El precio final no puede ser calculado.");
+                        break;
+                }
+                return precioFinal;
+            }
+        }
+
+
+        public double FijarPrecioFinal(Huesped hue, Actividad act)
+        {
+            double precioFinal = 0;
+
+            if (act.GetTipo().Equals("HOSTAL"))
+            {
+                precioFinal = NiveldeFidelidad(act.CostoDolares, hue.NivelFidelizacion);
+            }
+            else if (act.GetTipo().Equals("TERCERIZADA"))
+            {
+                ActividadTercerizada actividadTercerizada = act as ActividadTercerizada;
+                if (actividadTercerizada != null && actividadTercerizada.EstaConfirmada)
+                {
+                    precioFinal = act.CostoDolares * actividadTercerizada.Proveedor.Descuento;
+                }
+            }
+
+            return precioFinal;
+        }
 
         #endregion
     }

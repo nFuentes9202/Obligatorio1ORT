@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Hosting;
 using Obligatorio1;
 
 namespace WebApp.Controllers
@@ -26,7 +27,9 @@ namespace WebApp.Controllers
             try
             {
                 s.AgendarActividad(id, lid);
-               
+                
+
+
                 TempData["mensajeAgendado"] = "Agendado Correctamente.";
 
                 
@@ -39,6 +42,7 @@ namespace WebApp.Controllers
 
             return RedirectToAction("Index", "Home");
         }
+
 
     }
 

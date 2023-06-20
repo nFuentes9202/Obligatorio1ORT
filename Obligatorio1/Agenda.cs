@@ -15,12 +15,14 @@ namespace Obligatorio1
         public bool Estado { get; set; }
         public Huesped Huesped { get; set; }
         public Actividad Actividad { get; set; }
+        public double PrecioFinal { get; set;}
 
 
         public Agenda() {
             Estado = false;
             Id = UltimoId;
             UltimoId++;
+            PrecioFinal = 0;
         }
 
         public Agenda(bool estado, Huesped huesped, Actividad actividad)
@@ -31,6 +33,7 @@ namespace Obligatorio1
             Estado = estado;
             Huesped = huesped;
             Actividad = actividad;
+            PrecioFinal = 0;
         }
 
         // valida la edad y disponibilidad para saber si puede agendarse

@@ -52,7 +52,14 @@
                 <p class="card-text">@{
                         DateTime fn = (DateTime)agenda.Actividad.Fecha;
                     }@fn.ToString("dd/MM/yyyy")</p>
-                <p class="card-text">Aca va el costo</p>
+                    @if(agenda.PrecioFinal == 0)
+                    {
+                        <p class="card-text"> La actividad es Gratuita! </p>
+                    }
+                    else
+                    {
+                        <p class="card-text"> El costo de la actividad es : $@agenda.PrecioFinal</p>
+                    }
                 @if (agenda.Actividad is Obligatorio1.ActividadHostal){
                         Obligatorio1.ActividadHostal acthostal = agenda.Actividad as Obligatorio1.ActividadHostal;
                         
