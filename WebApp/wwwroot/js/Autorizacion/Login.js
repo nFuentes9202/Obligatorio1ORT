@@ -8,6 +8,6 @@ function validarDatos(evt) {
     if (email != "" && contra != "") {
         this.submit();
     } else {
-        document.querySelector("#pBusqueda").innerHTML = "Verifique los datos";
+        document.querySelector("#pLogin").innerHTML = "Verifique los datos";
     }
 }
