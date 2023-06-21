@@ -1,4 +1,7 @@
-﻿<link rel="stylesheet" href="~/css/Usuario/Agenda.css" asp-append-version="true" />
+﻿@section Scripts{
+    <script src="/js/Usuario/Agenda.js"></script>
+}
+<link rel="stylesheet" href="~/css/Usuario/Agenda.css" asp-append-version="true" />
 
 @model IEnumerable<Obligatorio1.Agenda>
 
@@ -17,19 +20,20 @@
             <section class="row justify-content-center">
                 <div class="col-4 border border-dark">
                     <div class="form-text-center">
-                        <form method="post" asp-action="BuscarAgendaPorFecha">
+                        <form method="post" asp-action="BuscarAgendaPorFecha" id="formFecha">
                             <label for="strFecha">Buscar actividad por fecha</label>
                             <input type="date" id="strFecha" name="FechaBuscada" class="form-control p-2" />
                             <input type="submit" value="Buscar" class="btn-primary" />
                         </form>
                         <p>@ViewBag.MensajeBusquedaFecha</p>
                         <p>@ViewBag.MensajeAgenda</p>
+                        <p id="pFecha"></p>
                     </div>
                 </div>
                 
                 <div class="col-4">
                     <div class="form-text-center">
-                        <form method="post" asp-action="BuscarAgendasPorDocumento">
+                        <form method="post" asp-action="BuscarAgendasPorDocumento" id="formDocumento">
                             <label for="strNumero">Buscar actividad por Documento</label><br>
                             @*<label for="slcTipoDocumento">Seleccione su tipo de documento</label>*@
                             <select id="slcTipoDocumento" name="tipoDocumento">
@@ -41,6 +45,7 @@
                             <input type="number" id="strNumero" name="nroDocumento" placeholder="Sin puntos ni guiones" class="form-control p-2" />
                             <input type="submit" value="Buscar" class="btn-primary" />
                         </form>
+                        <p id="pDocumento"></p>
                         <p>@ViewBag.MensajeBusquedaDocumento</p>
 
                     </div>

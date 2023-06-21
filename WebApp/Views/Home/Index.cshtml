@@ -1,4 +1,7 @@
-﻿<link rel="stylesheet" href="~/css/Home/Index.css" asp-append-version="true" />
+﻿@section Scripts{
+    <script src="/js/Home/Index.js"></script>
+}
+<link rel="stylesheet" href="~/css/Home/Index.css" asp-append-version="true" />
 
 @model IEnumerable<Obligatorio1.Actividad>
 
@@ -19,12 +22,12 @@
             <h4 class="display-6">Actividades Disponibles</h4>
         </div>
        <div class="form-group col-3">
-           <form method="post" asp-action="BuscarActividadPorFecha">
+           <form method="post" asp-action="BuscarActividadPorFecha" id="formIndex">
                  <label for="strFecha">Buscar actividad por fecha</label>
-                 <input type="date" id="strFecha" name="FechaBuscada" class="form-control" asp-action="BuscarActividad" />
+                 <input type="date" id="strFecha" name="FechaBuscada" class="form-control" asp-action="BuscarActividad"/>
                  <input type="submit" value="Buscar" class="btn-primary mt-2"/>
            </form>
-           <p>@ViewBag.MensajeBusqueda</p>
+           <p id="pBusqueda">@ViewBag.MensajeBusqueda</p>
        </div>
     </section>
 

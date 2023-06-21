@@ -1,7 +1,10 @@
-﻿<link rel="stylesheet" href="~/css/Proveedor/Index.css" asp-append-version="true" />
+﻿@section Scripts{
+    <script src="/js/Proveedor/Index.js"></script>
+}
+<link rel="stylesheet" href="~/css/Proveedor/Index.css" asp-append-version="true" />
 @model IEnumerable<Obligatorio1.Proveedor>
 <h1>Proveedores</h1>
-<h2>@ViewBag.mensajeDescuento</h2>
+<h2 id="pDescuento">@ViewBag.mensajeDescuento</h2>
 <table class="table">
     <thead>
         <tr>
@@ -41,11 +44,11 @@
                     @item.Descuento<span>%</span>
                 </td>
                 <td>
-                    <form method="post">
+                    <form method="post" class="formDescuento" id="@String.Format("{0}{1}","nd",@item.Id)" asp-action="EstablecerDescuento">
                         <label for="numDescuento">Ingrese el descuento</label>
                         <input type="hidden" name="id" value="@item.Id" />
-                        <input type="number"  id="numDescuento" name="descuento"/>
-                        <input type="submit" class="btn-primary" asp-action="EstablecerDescuento" value="Aplicar"/>
+                        <input type="number" name="descuento" id="@String.Format("{0}{1}","in",@item.Id)" />
+                        <input type="submit" class="btn-primary" value="Aplicar"/>
                     </form>
                     
                     

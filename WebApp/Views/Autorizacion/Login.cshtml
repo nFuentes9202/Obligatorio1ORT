@@ -1,7 +1,10 @@
-﻿<link rel="stylesheet" href="~/css/Autorizacion/Login.css" asp-append-version="true" />
+﻿@section Scripts{
+    <script src="/js/Autorizacion/Login.js"></script>
+}
+<link rel="stylesheet" href="~/css/Autorizacion/Login.css" asp-append-version="true" />
 
 <main class="form-signin h-auto m-auto">
-    <form method="post">
+    <form method="post" id="formLogin">
 
         <h1 class="h3 mb-3 fw-normal">Inicie sesión</h1>
 
@@ -15,6 +18,7 @@
         </div>
  
         <button class="btn btn-primary w-100 py-2" type="submit">Login</button>
+        <p id="pLogin"></p>
     </form>
     <div class="cosas">
     </div>
