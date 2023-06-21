@@ -111,6 +111,10 @@ namespace WebApp.Controllers
             {
                 List<Agenda> agendasOrdenadas = s.GetAgendas(idUsuario);
                 agendasOrdenadas.Sort();
+                if(agendasOrdenadas.Count == 0)
+                {
+                    ViewBag.MensajeBusqueda = "No tiene agendas";
+                }
                 return View(agendasOrdenadas);
             }
         }
