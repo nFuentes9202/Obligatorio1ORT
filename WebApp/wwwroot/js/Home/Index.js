@@ -6,6 +6,6 @@ function validarDatos(evt) {
     if (fecha != "") {
         this.submit();
     } else {
-        document.querySelector("#pLogin").innerHTML = "Verifique los datos";
+        document.querySelector("#pBusqueda").innerHTML = "Verifique los datos";
     }
 }
