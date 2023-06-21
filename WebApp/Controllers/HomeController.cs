@@ -41,6 +41,10 @@ namespace WebApp.Controllers
             }
             List<Actividad> buscadas = new List<Actividad>();
             buscadas = s.getActividadesSegunFecha(FechaBuscada);
+            if (buscadas.Count == 0)
+            {
+                ViewBag.MensajeBusqueda = "No se encontraron resultados";
+            }
             buscadas.Sort();
             return View("Index",buscadas);
 

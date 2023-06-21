@@ -67,6 +67,10 @@ namespace WebApp.Controllers
             }
             List<Agenda> buscadas = new List<Agenda>();
             buscadas = s.getAgendasSegunFecha(FechaBuscada);
+            if(buscadas.Count == 0)
+            {
+                ViewBag.MensajeBusquedaFecha = "No se encontraron resultados";
+            }
             return View("Agenda", buscadas);
 
         }
@@ -77,10 +81,15 @@ namespace WebApp.Controllers
             if (tipoDocumento == null || tipoDocumento.Equals("-1") )
             {
                 agendasOrdenadas = s.GetAgendas();
+                ViewBag.MensajeBusquedaDocumento = "Ingrese valores válidos";
                 agendasOrdenadas.Sort();
                 return View("Agenda",agendasOrdenadas);
             }
             agendasOrdenadas = s.GetAgendasPorDocumento(tipoDocumento, nroDocumento);
+            if (agendasOrdenadas.Count == 0)
+            {
+                ViewBag.MensajeBusquedaDocumento = "No se encontraron resultados";
+            }
             agendasOrdenadas.Sort();
             return View("Agenda", agendasOrdenadas);
         }
