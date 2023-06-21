@@ -57,11 +57,11 @@ namespace Obligatorio1
             AltaProveedor(pro10);
 
 
-            Actividad ac1 = new ActividadHostal("Campeonato de Pool", "Juego de mesa indoor", DateTime.Now.AddMinutes(10), 20, 18, 15, 20, "Roberto", "Salon de Juegos", false);
-            Actividad ac2 = new ActividadHostal("Campeonato de Ping Pong", "Juego de mesa indoor", DateTime.Now.AddDays(32), 26, 15, 10, 26, "Roberto", "Salon de Juegos", false);
+            Actividad ac1 = new ActividadHostal("Campeonato de Pool", "Juego de mesa indoor", DateTime.Now.AddMinutes(10), 20, 18, 15, 2, "Roberto", "Salon de Juegos", false);
+            Actividad ac2 = new ActividadHostal("Campeonato de Ping Pong", "Juego de mesa indoor", DateTime.Now.AddDays(32), 26, 15, 10, 13, "Roberto", "Salon de Juegos", false);
             Actividad ac3 = new ActividadHostal("Campeonato de Tenis", "Partidos de Tenis singles", DateTime.Now.AddDays(100), 12, 18, 25, 12, "Andres", "Canchas de Tenis", true);
-            Actividad ac4 = new ActividadHostal("Campeonato de Futbol 5", "Partidos de futbol 5 por equipo", DateTime.Now.AddDays(5), 30, 18, 75, 30, "Andres", "Canchas de Futbol", true);
-            Actividad ac5 = new ActividadHostal("Campeonato de Ajedrez", "Juego de mesa indoor", DateTime.Now.AddDays(54), 8, 5, 0, 8, "Roberto", "Salon de Juegos", false);
+            Actividad ac4 = new ActividadHostal("Campeonato de Futbol 5", "Partidos de futbol 5 por equipo", DateTime.Now.AddDays(5), 30, 18, 75, 5, "Andres", "Canchas de Futbol", true);
+            Actividad ac5 = new ActividadHostal("Campeonato de Ajedrez", "Juego de mesa indoor", DateTime.Now.AddDays(54), 8, 5, 0, 0, "Roberto", "Salon de Juegos", false);
             Actividad ac6 = new ActividadHostal("Campeonato de Pesca", "Actividad Acuatica", DateTime.Now.AddMinutes(10), 50, 10, 30, 50, "Sebastian", "Lago", true);
             Actividad ac7 = new ActividadHostal("Torneo de Golf", "Competencia mixta a 9 hoyos", DateTime.Now.AddDays(2), 35, 21, 100, 35, "Andres", "Campo de Golf", true);
             Actividad ac8 = new ActividadHostal("Torneo de Poker", "Juego de mesa indoor", DateTime.Now.AddDays(45), 25, 18, 0, 25, "Roberto", "Salon de Juegos", false);
