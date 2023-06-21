@@ -18,8 +18,11 @@ namespace WebApp.Controllers
             int? lid = HttpContext.Session.GetInt32("LogueadoId");
             string? tipoUsuario = HttpContext.Session.GetString("LogueadoTipo");
 
-
-            if (lid == null || tipoUsuario.Equals("Operador"))
+            if(lid == null)
+            {
+                return RedirectToAction("Login", "Autorizacion");
+            }
+            if (tipoUsuario.Equals("Operador"))
             {
                 return RedirectToAction("Index", "Home");
             }
