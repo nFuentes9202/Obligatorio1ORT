@@ -121,6 +121,7 @@ namespace WebApp.Controllers
         public IActionResult ConfirmarAgenda(int id)
         {
             s.ConfirmarAgenda(id);
+            ViewBag.MensajeAgenda = "Se confirmó la agenda satisfactoriamente";
             return View("Agenda",s.GetAgendas());
 
         }
