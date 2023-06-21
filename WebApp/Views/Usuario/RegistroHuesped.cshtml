@@ -1,4 +1,7 @@
-﻿<link rel="stylesheet" href="~/css/Usuario/RegistroHuesped.css" asp-append-version="true" />
+﻿@section Scripts{
+    <script src="/js/Usuario/RegistroHuesped.js"></script>
+}
+<link rel="stylesheet" href="~/css/Usuario/RegistroHuesped.css" asp-append-version="true" />
 
 @model Obligatorio1.Huesped
 <h1>Registrarse</h1>
@@ -6,7 +9,7 @@
 <hr />
 <div class="row mx-auto">
     <div class="col-md-4">
-        <form method="post">
+        <form method="post" id="formRegistro">
             <div class="form-group">
 
                 <label class="control-label">Nombre</label>
@@ -19,7 +22,7 @@
                 <input asp-for="Email" class="form-control" />
 
                 <label class="control-label">Contraseña</label>
-                <input asp-for="Contrasenia" class="form-control" />
+                <input asp-for="Contrasenia" type="password" class="form-control" />
 
                 <label for="tipoDoc">Tipo Documento</label>
                 <select asp-for="TipoDocumento" class="form-control" id="tipoDoc">
@@ -41,6 +44,6 @@
                 <input type="submit" value="Registrarse" class="btn btn-primary" />
             </div>
         </form>
-        <p>@ViewBag.msgRegistro</p>
+        <p id="pRegistro">@ViewBag.msgRegistro</p>
     </div>
 </div>
